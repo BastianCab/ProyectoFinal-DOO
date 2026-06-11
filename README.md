@@ -1,3 +1,3 @@
 # ProyectoFinal-DOO
 
-<img width="694" height="367" alt="Diagrama Casos de uso - Proyecto Final - DOO" src="https://github.com/user-attachments/assets/349ec557-7dfb-4121-b621-7ea618262412" />
+<img width="1055" height="557" alt="image" src="https://github.com/user-attachments/assets/80920001-94b2-4a4e-ae7f-72452b56247a" />
