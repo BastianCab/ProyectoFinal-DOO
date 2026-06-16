@@ -1,3 +1,3 @@
 # ProyectoFinal-DOO
 
-<img width="1055" height="557" alt="image" src="https://github.com/user-attachments/assets/80920001-94b2-4a4e-ae7f-72452b56247a" />
+<img width="769" height="406" alt="gestionDeTorneos" src="https://github.com/user-attachments/assets/86f89171-cc36-4fed-9f48-9ad84fa50505" />
