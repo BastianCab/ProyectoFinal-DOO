@@ -1,10 +1,7 @@
 package Logica;
 
 public class Usuario {
-    public Usuario() {
-
-    }
-
+    //Deberían ser de la GUI
     public void verEstadoTorneo() {
         System.out.println("Vamos perdiendo");
     }
