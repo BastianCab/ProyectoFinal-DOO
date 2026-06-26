@@ -1,15 +1,62 @@
 package Logica;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Torneo {
     private String nombre;
-    private String diciplina;
+    private String disciplina;
+    private String tipoTorneo;
+    private ArrayList<Enfrentamiento> enfrentamientos;
+    private ArrayList<Participante> Competidores;
     private List<ObservadorTorneo> observadores = new ArrayList<>();
 
-    public Torneo(String nombre, String diciplina){
+    public Torneo() {
+        this.nombre = "";
+        this.disciplina = "";
+        this.tipoTorneo = "";
+        enfrentamientos = new ArrayList();
+        Competidores = new ArrayList();
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
         this.nombre = nombre;
-        this.diciplina = diciplina;
+    }
+
+    public String getDisciplina() {
+        return disciplina;
+    }
+
+    public void setDisciplina(String disciplina) {
+        this.disciplina = disciplina;
+    }
+
+    public String getTipoTorneo() {
+        return tipoTorneo;
+    }
+
+    public void setTipoTorneo(String tipoTorneo) {
+        this.tipoTorneo = tipoTorneo;
+    }
+
+    public ArrayList<Participante> getCompetidores() {
+        return Competidores;
+    }
+
+    public void setCompetidores(ArrayList<Participante> competidores) {
+        Competidores = competidores;
+    }
+
+    public ArrayList<Enfrentamiento> getEnfrentamientos() {
+        return enfrentamientos;
+    }
+
+    public void setEnfrentamientos(ArrayList<Enfrentamiento> enfrentamientos) {
+        this.enfrentamientos = enfrentamientos;
     }
 
     public void agregarObservador(ObservadorTorneo observador) {
