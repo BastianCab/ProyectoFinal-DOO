@@ -59,8 +59,13 @@ public class Enfrentamiento {
 
     @Override
     public String toString() {
-        if (resultado != -1) {
-            return Competidor1.
+        if (resultado == 1) {
+            return Competidor1.getNombre() + " ganó el enfrentamiento contra " +
+                    Competidor2.getNombre();
+        } else if (resultado == 2) {
+            return Competidor2.getNombre() + " ganó el enfrentamiento contra " +
+                    Competidor1.getNombre();
         }
+        return "El enfrentamiento no se ha realizado aún";
     }
 }
