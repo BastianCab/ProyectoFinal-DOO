@@ -1,58 +1,90 @@
 package Logica;
 
-import java.time.LocalTime;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
+/**
+ * Clase que representa el enfrentamiento entre 2 competidores, contiene
+ * una fecha y hora a la cual se enfrentarán, ambos participantes y el resultado una
+ * vez ya realizado
+ */
 public class Enfrentamiento {
-    private LocalDate fecha;
-    private LocalTime hora;
+    private LocalDateTime fechaHora;
     private Participante Competidor1;
     private Participante Competidor2;
     private int resultado = -1;
-    public Enfrentamiento(LocalDate fecha, LocalTime hora,
-                          Participante Competidor1, Participante Competidor2) {
-        this.fecha = fecha;
-        this.hora = hora;
+
+    /**
+     * Crea el enfrentamiento, la fecha y hora se debe especificar luego
+     * @param Competidor1 el primer participante
+     * @param Competidor2 el segundo participante
+     */
+    public Enfrentamiento(Participante Competidor1, Participante Competidor2) {
+        this.fechaHora = null;
         this.Competidor1 = Competidor1;
         this.Competidor2 = Competidor2;
     }
 
+    /**
+     * Getter del resultado una vez realizado el enfrentamiento
+     * @return el resultado del enfrentamiento
+     */
     public int getResultado() {
         return resultado;
     }
 
+    /**
+     * Setter del resultado
+     * @param resultado el resultado del enfrentamiento, 1 si ganó el primer participante,
+     *                  2 si ganó el segundo participante
+     */
     public void setResultado(int resultado) {
         this.resultado = resultado;
     }
 
-    public LocalDate getFecha() {
-        return fecha;
+    /**
+     * Getter de la fecha y la hora a la que se realizará o realizó el enfrentamiento
+     * @return la fecha y hora del enfrentamiento
+     */
+    public LocalDateTime getFechaHora() {
+        return fechaHora;
     }
 
-    public void setFecha(LocalDate fecha) {
-        this.fecha = fecha;
+    /**
+     * Setter de la fecha y hora del enfrentamiento
+     * @param fechaHora la fecha y hora a la cual se realizará el enfrentamiento
+     */
+    public void setFechaHora(LocalDateTime fechaHora) {
+        this.fechaHora = fechaHora;
     }
 
-    public LocalTime getHora() {
-        return hora;
-    }
-
-    public void setHora(LocalTime hora) {
-        this.hora = hora;
-    }
-
+    /**
+     * Getter del primer participante
+     * @return el primer participante
+     */
     public Participante getCompetidor1() {
         return Competidor1;
     }
 
+    /**
+     * Setter del primer participante
+     * @param Competidor1 el participante al cual se quiere cambiar
+     */
     public void setCompetidor1(Participante Competidor1) {
         this.Competidor1 = Competidor1;
     }
 
+    /**
+     * Getter del segundo participante
+     * @return el segundo participante
+     */
     public Participante getCompetidor2() {
         return Competidor2;
     }
 
+    /**
+     * Setter del segundo participante
+     * @param Competidor2 el participante al cual se quiere cambiar
+     */
     public void setCompetidor2(Participante Competidor2) {
         this.Competidor2 = Competidor2;
     }
@@ -66,6 +98,8 @@ public class Enfrentamiento {
             return Competidor2.getNombre() + " ganó el enfrentamiento contra " +
                     Competidor1.getNombre();
         }
-        return "El enfrentamiento no se ha realizado aún";
+        return "Enfrentamiento: " + Competidor1.getNombre() + " vs " +
+                Competidor2.getNombre() + "\n" + "El " + fechaHora.toLocalDate()
+                + " a las " + fechaHora.toLocalTime();
     }
 }

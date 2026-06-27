@@ -1,5 +1,9 @@
 package Logica;
 
+/**
+ * Representa a un usuario el cual puede observar las estadísticas, el estado
+ * y los próximos encuentros del torneo
+ */
 public class Usuario {
     //Deberían ser de la GUI
     public void verEstadoTorneo() {
