@@ -30,7 +30,6 @@ public class Torneo {
 
     /**
      * Getter del nombre del torneo
-     *
      * @return el nombre del torneo
      */
     public String getNombre() {
@@ -39,7 +38,6 @@ public class Torneo {
 
     /**
      * Setter del nombre del torneo
-     *
      * @param nombre el nombre del torneo al cual se desea cambiar
      */
     public void setNombre(String nombre) {
@@ -48,7 +46,6 @@ public class Torneo {
 
     /**
      * Getter de la disciplina del torneo
-     *
      * @return la disciplina del torneo
      */
     public String getDisciplina() {
@@ -57,7 +54,6 @@ public class Torneo {
 
     /**
      * Setter de la disciplina del torneo
-     *
      * @param disciplina la disciplina a la que se desea cambiar
      */
     public void setDisciplina(String disciplina) {
@@ -66,7 +62,6 @@ public class Torneo {
 
     /**
      * Getter del formato del torneo
-     *
      * @return el formato del torneo
      */
     public String getTipoTorneo() {
@@ -75,7 +70,6 @@ public class Torneo {
 
     /**
      * Setter del formato del torneo
-     *
      * @param tipoTorneo el formato al cual se quiere cambiar
      */
     public void setTipoTorneo(String tipoTorneo) {
@@ -84,7 +78,6 @@ public class Torneo {
 
     /**
      * Getter de la lista de competidores
-     *
      * @return la lista que contiene a los competidores del torneo
      */
     public ArrayList<Participante> getCompetidores() {
