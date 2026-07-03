@@ -14,12 +14,12 @@ public class PanelPrincipal extends JPanel {
     /**
      * Inicializa el panel principal, pinta el fondo y agrega el título y los botones
      */
-    public PanelPrincipal() {
+    public PanelPrincipal(Proxy proxy,JPanel contenedor, CardLayout cardLayout) {
         this.setLayout(null);
         this.setBackground(Color.WHITE);
 
-        this.proxy = new Proxy();
-        this.botones = new BotonesPanelPrincipal(proxy);
+        this.proxy = proxy;
+        this.botones = new BotonesPanelPrincipal(proxy, contenedor, cardLayout);
 
         JLabel Titulo = new JLabel("Gestor de Torneos");
         Titulo.setFont(new Font("Arial", Font.BOLD, 40));

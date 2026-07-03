@@ -5,9 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84c50cba-9721-4702-a204-1353f6b09a0f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/ObservadorTorneo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/ParticipanteFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/TipoParticipante.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/BotonesPanelPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/BotonesPanelPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/ClickBotones.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/ClickBotonesPanelPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/PanelPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/PanelPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/Proxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/Proxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/Ventana.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/Ventana.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/Equipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/ParticipanteEquipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/Inscribible.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/Organizador.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/Participante.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/Participante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/ParticipantePersona.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/ParticipantePersona.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/Torneo.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/Torneo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/deLiga.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/DeLiga.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/eliminatorioDoble.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/EliminatoriaDoble.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/eliminatorioSimple.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/EliminatoriaSimple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/tipoTorneo.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/TipoTorneo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/todosContraTodos.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +34,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -46,6 +64,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.main.executor&quot;: &quot;Run&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
