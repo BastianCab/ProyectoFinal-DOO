@@ -1,5 +1,6 @@
 package GUI;
-import Logica.*;
+import Logica.Torneo;
+
 import javax.swing.*;
 
 /**
@@ -10,6 +11,8 @@ public class PH_Proxy {
     String nombre = "";
     String disciplina = "";
     int tipoTorneo = 0;
+    Torneo TorActual;
+    boolean[] ValidarTorneo = new boolean[5];
     PanelCreacion Panel;
 
     public PH_Proxy(PanelCreacion Panel) {
@@ -43,26 +46,36 @@ public class PH_Proxy {
         switch (Botton){
             case (1):
                 nombreOrganizador = popupString("Nombre");
+                ValidarTorneo[0] = true;
                 break;
 
             case (2):
                 nombre = popupString("Nombre");
+                ValidarTorneo[1] = true;
                 break;
 
             case (3):
                 disciplina = popupString("Disciplina");
+                ValidarTorneo[2] = true;
                 break;
 
             case (4):
                 tipoTorneo = popupInt("Tipo de torneo");
+                ValidarTorneo[3] = true;
                 break;
 
             case (5):
-                CrearInterante();
-                break;
-
-            case (6):
-                CrearTorneo();
+                boolean c = true;
+                for(int i=0;i<4;i++){
+                    if (ValidarTorneo[i]==false){
+                        c = false;
+                    }
+                }
+                if (c == true) {
+                    CrearTorneo();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Falta información", "Valor no permitido", JOptionPane.ERROR_MESSAGE);
+                }
                 break;
         }
         Panel.repaint();
@@ -88,21 +101,29 @@ public class PH_Proxy {
     }
 
     public String popupString(String Peticion) {
-        int error = 0;
-        String Ref;
-        while(error ==0) {
+        boolean error = false;
+        String Ref="error";
+        while(error == false) {
             Ref = JOptionPane.showInputDialog(Peticion);
-            if (Ref != ""){
-                return Ref;
+            try {
+                if (Ref.isEmpty()|| Ref.isBlank()){
+                    JOptionPane.showMessageDialog(null, "No puede ser nulo", "Valor no permitido", JOptionPane.ERROR_MESSAGE);
+                }
+                else {
+                    error = true;
+                }
+            } catch (NullPointerException e) {
+                JOptionPane.showMessageDialog(null, e.getMessage(), "Valor no permitido", JOptionPane.ERROR_MESSAGE);
             }
         }
-        return "error";
+        return Ref;
     }
 
     public void CrearTorneo() {
+        TorActual = new Torneo(nombreOrganizador,nombre,disciplina,String.valueOf(tipoTorneo));
+        ValidarTorneo[4] = true;
     }
-    public void CrearInterante() {
-    }
+
     public String getNombre(){
         return nombre;
     }
@@ -115,4 +136,13 @@ public class PH_Proxy {
     public int getTipoTorneo() {
         return tipoTorneo;
     }
+    public String getTorListo() {
+        if (ValidarTorneo[4]){
+            return "Torneo Hecho";
+        }
+        else{
+            return "";
+        }
+    }
+
 }
