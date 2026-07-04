@@ -18,10 +18,7 @@ public class Ventana extends JFrame {
 
         JPanel panelMenu = new PanelPrincipal(proxyGlobal, panelContenedor, cardLayout);
 
-        JPanel panelCrear = new JPanel();
-        panelCrear.setBackground(Color.LIGHT_GRAY);
-        panelCrear.setLayout(new GridBagLayout()); // Solo para centrar el texto temporal
-        panelCrear.add(new JLabel("PANTALLA: FORMULARIO PARA CREAR TORNEO"));
+        JPanel panelCrear = new PanelCreacion();
 
         JPanel panelModificar = new JPanel();
         panelModificar.setBackground(Color.LIGHT_GRAY);
