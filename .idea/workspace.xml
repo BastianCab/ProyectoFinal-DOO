@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84c50cba-9721-4702-a204-1353f6b09a0f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/PanelCrearTorneoConfiguracionBasica.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/PanelCrearTorneoMaster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/TipoTorneoEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/Ventana.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/Ventana.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/PanelCrearTorneoConfiguracionBasica.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/PanelCrearTorneoConfiguracionBasica.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
