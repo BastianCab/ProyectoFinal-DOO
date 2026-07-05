@@ -58,6 +58,9 @@ public class Torneo {
             obs.actualizar(datosDelPartido);
         }
     }
+    public int getCantidadCompetidores(){
+        return competidores.size();
+    }
 
     /**
      * Getter del nombre del torneo
