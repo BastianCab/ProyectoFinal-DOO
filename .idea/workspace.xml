@@ -12,9 +12,7 @@
       <change afterPath="$PROJECT_DIR$/GestionTorneos/src/test/java/Logica/CalcularDoblesTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/GestionTorneos/src/test/java/Logica/CalcularSimpleTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionTorneos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/PanelMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/PanelMod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/Torneo.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/Torneo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/PanelCrearTorneoConfiguracionBasica.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/PanelCrearTorneoConfiguracionBasica.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,16 +25,10 @@
         <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
-        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="RicardoP1" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -51,18 +43,10 @@
     &quot;accountId&quot;: &quot;518426ef-5f91-41bd-8b80-fa5cdd92b0a3&quot;
   }
 }</component>
-  <component name="JavaAutoRunManager">
-    <enabled-run-configurations>
-      <run-configuration type="JUnit" name="CalcularSimpleTest" />
-    </enabled-run-configurations>
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="3EyiNdtaC8MLEd6Yn1JeYxBiOOg" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
