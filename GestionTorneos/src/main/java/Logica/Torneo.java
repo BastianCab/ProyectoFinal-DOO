@@ -12,7 +12,8 @@ public class Torneo {
     private String nombreOrganizador;
     private String nombre;
     private String disciplina;
-    private String tipoTorneo;
+    private TipoParticipante tipoParticipante;
+    private TipoTorneoEnum tipoTorneo;
     private ArrayList<Enfrentamiento> enfrentamientos;
     private ArrayList<Participante> competidores;
     private List<ObservadorTorneo> observadores = new ArrayList<>();
@@ -21,10 +22,11 @@ public class Torneo {
      * Crea un torneo, inicializa cada característica del torneo,
      * pero se deben definir luego por un organizador
      */
-    public Torneo(String nombreOrganizador, String nombre, String disciplina, String tipoTorneo) {
+    public Torneo(String nombreOrganizador, String nombre, String disciplina, TipoParticipante tipoParticipante, TipoTorneoEnum tipoTorneo) {
         this.nombreOrganizador = nombreOrganizador;
         this.nombre = nombre;
         this.disciplina = disciplina;
+        this.tipoParticipante = tipoParticipante;
         this.tipoTorneo = tipoTorneo;
         this.enfrentamientos = new ArrayList();
         this.competidores = new ArrayList();
@@ -87,10 +89,18 @@ public class Torneo {
     }
 
     /**
+     * Getter del tipo de participante del torneo
+     * @return el tipo de participante del torneo
+     */
+    public TipoParticipante getTipoParticipante() {
+        return tipoParticipante;
+    }
+
+    /**
      * Getter del formato del torneo
      * @return el formato del torneo
      */
-    public String getTipoTorneo() {
+    public TipoTorneoEnum getTipoTorneo() {
         return tipoTorneo;
     }
 

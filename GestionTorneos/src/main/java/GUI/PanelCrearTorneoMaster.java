@@ -1,5 +1,7 @@
 package GUI;
 
+import Logica.TipoParticipante;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -11,6 +13,8 @@ public class PanelCrearTorneoMaster extends JPanel {
     private CardLayout layoutFormulario;
     private Proxy proxy;
 
+    private PanelCrearTorneoInscripcion panelCrearTorneoInscripcion;
+
     public PanelCrearTorneoMaster(Proxy proxyGlobal) {
         this.proxy = proxyGlobal;
 
@@ -19,10 +23,9 @@ public class PanelCrearTorneoMaster extends JPanel {
         this.setLayout(layoutFormulario);
 
         JPanel panelCrearTorneoConfiguracionBasica = new PanelCrearTorneoConfiguracionBasica(this, proxy);
-        JPanel panelCrearTorneoInscripcion = new JPanel(); // Temporal
+        this.panelCrearTorneoInscripcion = new PanelCrearTorneoInscripcion(this, proxy); // Temporal
         JPanel panelCrearTorneoFechas = new JPanel(); // Temporal
 
-        panelCrearTorneoInscripcion.add(new JLabel("PASO 2: INSCRIBIR PARTICIPANTES"));
         panelCrearTorneoFechas.add(new JLabel("PASO 3: CALENDARIO DE ENFRENTAMIENTOS"));
 
 
@@ -41,7 +44,8 @@ public class PanelCrearTorneoMaster extends JPanel {
     /**
      * Avanza a las inscripciones.
      */
-    public void irAPaso2() {
+    public void irAPaso2(TipoParticipante tipoParticipante) {
+        panelCrearTorneoInscripcion.personalizarTextos(tipoParticipante);
         layoutFormulario.show(this, "PASO_2");
     }
 

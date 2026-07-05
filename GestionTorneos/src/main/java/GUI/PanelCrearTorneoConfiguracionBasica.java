@@ -2,6 +2,7 @@ package GUI;
 
 
 import Logica.TipoTorneoEnum;
+import Logica.TipoParticipante;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -17,6 +18,7 @@ public class PanelCrearTorneoConfiguracionBasica extends JPanel {
 
     private JComboBox<TipoTorneoEnum> comboFormatos;
     private JTextArea txtDescripcionFormato;
+    private JComboBox<TipoParticipante> comboTipoParticipante;
 
     public PanelCrearTorneoConfiguracionBasica(PanelCrearTorneoMaster master, Proxy proxy) {
         this.panelMaster = master;
@@ -27,54 +29,52 @@ public class PanelCrearTorneoConfiguracionBasica extends JPanel {
 
         JPanel panelFormulario = new JPanel();
         panelFormulario.setLayout(null);
-        panelFormulario.setPreferredSize(new Dimension(550, 450));
+        panelFormulario.setPreferredSize(new Dimension(550, 480));
         panelFormulario.setBackground(Color.WHITE);
 
         JLabel lblTitulo = new JLabel("Paso 1: Configuración Básica");
         lblTitulo.setFont(new Font("Arial", Font.BOLD, 24));
-        //lblTitulo.setBounds(50, 30, 400, 40);
         lblTitulo.setBounds(20, 10, 550, 40);
         panelFormulario.add(lblTitulo);
 
         JLabel lblOrganizador = new JLabel("Nombre del Organizador:");
-        //lblOrganizador.setBounds(50, 100, 200, 30);
-        lblOrganizador.setBounds(20, 80, 200, 30);
+        lblOrganizador.setBounds(20, 70, 200, 30);
         txtOrganizador = new JTextField();
-        //txtOrganizador.setBounds(250, 100, 250, 30);
-        txtOrganizador.setBounds(220, 80, 300, 30);
+        txtOrganizador.setBounds(220, 70, 300, 30);
         panelFormulario.add(lblOrganizador);
         panelFormulario.add(txtOrganizador);
 
         JLabel lblTorneo = new JLabel("Nombre del Torneo:");
-        //lblTorneo.setBounds(50, 150, 200, 30);
-        lblTorneo.setBounds(20, 130, 200, 30);
+        lblTorneo.setBounds(20, 120, 200, 30);
         txtNombreTorneo = new JTextField();
-        //txtNombreTorneo.setBounds(250, 150, 250, 30);
-        txtNombreTorneo.setBounds(220, 130, 300, 30);
+        txtNombreTorneo.setBounds(220, 120, 300, 30);
         panelFormulario.add(lblTorneo);
         panelFormulario.add(txtNombreTorneo);
 
         JLabel lblDisciplina = new JLabel("Disciplina:");
-        //lblDisciplina.setBounds(50, 200, 200, 30);
-        lblDisciplina.setBounds(20, 180, 200, 30);
+        lblDisciplina.setBounds(20, 170, 200, 30);
         txtDisciplina = new JTextField();
-        //txtDisciplina.setBounds(250, 200, 250, 30);
-        txtDisciplina.setBounds(220, 180, 300, 30);
+        txtDisciplina.setBounds(220, 170, 300, 30);
         panelFormulario.add(lblDisciplina);
         panelFormulario.add(txtDisciplina);
 
+        JLabel lblTipoPart = new JLabel("Modalidad:");
+        lblTipoPart.setBounds(20, 220, 200, 30);
+        comboTipoParticipante = new JComboBox<>(TipoParticipante.values());
+        comboTipoParticipante.setBounds(220, 220, 300, 30);
+        panelFormulario.add(lblTipoPart);
+        panelFormulario.add(comboTipoParticipante);
+
         JLabel lblFormato = new JLabel("Formato del Torneo:");
-        //lblFormato.setBounds(50, 250, 200, 30);
-        lblFormato.setBounds(20, 230, 200, 30);
+        lblFormato.setBounds(20, 270, 200, 30);
 
         comboFormatos = new JComboBox<>(TipoTorneoEnum.values());
-        //comboFormatos.setBounds(250, 250, 250, 30);
-        comboFormatos.setBounds(220, 230, 300, 30);
+        comboFormatos.setBounds(220, 270, 300, 30);
         panelFormulario.add(lblFormato);
         panelFormulario.add(comboFormatos);
 
         txtDescripcionFormato = new JTextArea();
-        txtDescripcionFormato.setBounds(220, 270, 300, 60);
+        txtDescripcionFormato.setBounds(220, 310, 300, 60);
         txtDescripcionFormato.setWrapStyleWord(true);
         txtDescripcionFormato.setLineWrap(true);
         txtDescripcionFormato.setEditable(false); // Evita que el usuario escriba encima
@@ -96,7 +96,7 @@ public class PanelCrearTorneoConfiguracionBasica extends JPanel {
 
         JButton btnSiguiente = new JButton("Siguiente ->");
         //btnSiguiente.setBounds(400, 150, 150, 40);
-        btnSiguiente.setBounds(370, 360, 150, 40);
+        btnSiguiente.setBounds(370, 390, 150, 40);
         panelFormulario.add(btnSiguiente);
 
         btnSiguiente.addActionListener(new ClickBotonesPanelCrearTorneoConfiguracionBasica());
@@ -114,6 +114,7 @@ public class PanelCrearTorneoConfiguracionBasica extends JPanel {
             String organizador = txtOrganizador.getText().trim();
             String torneo = txtNombreTorneo.getText().trim();
             String disciplina = txtDisciplina.getText().trim();
+            TipoParticipante tipoParticipante = (TipoParticipante) comboTipoParticipante.getSelectedItem();
             TipoTorneoEnum formato = (TipoTorneoEnum) comboFormatos.getSelectedItem();
 
             if (organizador.isEmpty() || torneo.isEmpty() || disciplina.isEmpty()) {
@@ -124,8 +125,8 @@ public class PanelCrearTorneoConfiguracionBasica extends JPanel {
                 return;
             }
 
-            proxy.crearTorneo(organizador, torneo, disciplina, "liga"); //(organizador, torneo, disciplina, formato);
-            panelMaster.irAPaso2();
+            proxy.crearTorneo(organizador, torneo, disciplina, tipoParticipante, formato); //(organizador, torneo, disciplina, formato);
+            panelMaster.irAPaso2(tipoParticipante);
         }
     }
 }

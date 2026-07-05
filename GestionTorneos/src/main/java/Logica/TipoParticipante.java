@@ -1,6 +1,6 @@
 package Logica;
 
 public enum TipoParticipante {
-    INDIVIDUAL,
+    PERSONA,
     EQUIPO
 }
