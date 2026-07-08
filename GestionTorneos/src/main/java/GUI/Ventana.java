@@ -18,7 +18,7 @@ public class Ventana extends JFrame {
 
         JPanel panelMenu = new PanelPrincipal(proxyGlobal, panelContenedor, cardLayout);
 
-        JPanel panelCrear = new PanelCrearTorneoMaster(proxyGlobal);
+        JPanel panelCrear = new PanelCrearTorneoMaster(proxyGlobal, panelContenedor, cardLayout);
 
         JPanel panelModificar = new JPanel();
         panelModificar.setBackground(Color.LIGHT_GRAY);

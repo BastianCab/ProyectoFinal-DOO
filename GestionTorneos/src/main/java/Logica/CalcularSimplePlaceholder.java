@@ -1,6 +1,8 @@
 package Logica;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Collections;
 
 public class CalcularSimplePlaceholder implements CalcularJuegoPlaceholder
 {
@@ -52,8 +54,26 @@ public class CalcularSimplePlaceholder implements CalcularJuegoPlaceholder
     }
 
     @Override
-    public ArrayList<Enfrentamiento> calcularEnfrentamientos(ArrayList<Participante> competidores) {
-        return null;
+    public List<Enfrentamiento> calcularEnfrentamientos(List<Participante> competidores) {
+        List<Enfrentamiento> partidos = new ArrayList<>();
+        Collections.shuffle(competidores);
+
+        // 1. CREAMOS LA PRIMERA RONDA (Partidos reales)
+        for (int i = 0; i < competidores.size(); i += 2) {
+            Participante p1 = competidores.get(i);
+            Participante p2 = (i + 1 < competidores.size()) ? competidores.get(i + 1) : new Participante(null, "Por definir", null, null);
+            partidos.add(new Enfrentamiento(p1, p2));
+        }
+
+        int partidosFaltantes = (competidores.size() / 2) - 1;
+        for (int i = 0; i < partidosFaltantes; i++) {
+            Participante fantasma1 = new Participante(null, "Por definir", "-", "-");
+            Participante fantasma2 = new Participante(null, "Por definir", "-", "-");
+
+            partidos.add(new Enfrentamiento(fantasma1, fantasma2));
+        }
+
+        return partidos;
     }
 
     @Override
