@@ -11,14 +11,16 @@ public class CalcularLiga implements CalcularJuego{
     public int getTipo(){
         return 3;
     }
-
     @Override
     public int getCompetidores() {
         return torneo.getCantidadCompetidores();
     }
-
     @Override
     public void siguiente() {
+
+    }
+    @Override
+    public void enfrentar(int a) {
 
     }
 }

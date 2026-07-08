@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84c50cba-9721-4702-a204-1353f6b09a0f" name="Changes" comment="Resolver merge">
+    <list default="true" id="84c50cba-9721-4702-a204-1353f6b09a0f" name="Changes" comment="Terminar con CalcularDobles y ambos imprimen al encontrar un ganador">
+      <change afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/ErroresCalculo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularDobles.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularDobles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularJuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularJuego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularLiga.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularLiga.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularSimple.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularSimple.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GestionTorneos/src/test/java/Logica/CalcularDoblesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/test/java/Logica/CalcularDoblesTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GestionTorneos/src/test/java/Logica/CalcularSimpleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/test/java/Logica/CalcularSimpleTest.java" afterDir="false" />
@@ -57,25 +60,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.main.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CalcularDoblesTest.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.CalcularSimpleTest.executor&quot;: &quot;Debug&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/laura_pro/Documentos/Universidad/ProyectoFinal-DOO&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.main.executor": "Run",
+    "JUnit.CalcularDoblesTest.executor": "Debug",
+    "JUnit.CalcularSimpleTest.executor": "Debug",
+    "JavaClassFindUsagesOptions.isDerivedClasses": "true",
+    "JavaClassFindUsagesOptions.isFieldsUsages": "true",
+    "JavaClassFindUsagesOptions.isMethodsUsages": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/laura_pro/Documentos/Universidad/ProyectoFinal-DOO",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.general"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -84,6 +90,7 @@
       <recent name="Logica" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Logica" />
       <recent name="GUI" />
     </key>
   </component>
@@ -136,13 +143,22 @@
       <option name="project" value="LOCAL" />
       <updated>1783532070380</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Terminar con CalcularDobles y ambos imprimen al encontrar un ganador">
+      <option name="closed" value="true" />
+      <created>1783543617785</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1783543617785</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Eliminar Archivos Placeholder" />
     <MESSAGE value="Resolver merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="Resolver merge" />
+    <MESSAGE value="Terminar con CalcularDobles y ambos imprimen al encontrar un ganador" />
+    <option name="LAST_COMMIT_MESSAGE" value="Terminar con CalcularDobles y ambos imprimen al encontrar un ganador" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -154,31 +170,38 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularSimple.java</url>
-          <line>40</line>
+          <line>35</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularDobles.java</url>
-          <line>102</line>
+          <line>103</line>
           <option name="timeStamp" value="58" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularSimple.java</url>
-          <line>36</line>
-          <properties class="Logica.CalcularSimple" method="siguiente">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="38" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularDobles.java</url>
+          <line>88</line>
+          <option name="timeStamp" value="63" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularSimple.java</url>
-          <line>23</line>
-          <properties class="Logica.CalcularSimple" method="Enfrentar">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="57" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularDobles.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularDobles.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularDobles.java</url>
+          <line>79</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularDobles.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="74" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -196,6 +219,11 @@
         <watch expression="buffer" language="JAVA" />
         <watch expression="partido" language="JAVA" />
         <watch expression="partido[partidoAct*2]" language="JAVA" />
+        <watch expression="partido" language="JAVA" />
+        <watch expression="partido" language="JAVA" />
+        <watch expression="partido" language="JAVA" />
+        <watch expression="partido" language="JAVA" />
+        <watch expression="partido" language="JAVA" />
         <watch expression="partido" language="JAVA" />
         <watch expression="partido" language="JAVA" />
       </configuration>

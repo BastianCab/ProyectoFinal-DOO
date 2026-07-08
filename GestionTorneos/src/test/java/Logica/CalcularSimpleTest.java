@@ -7,11 +7,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CalcularSimpleTest {
     @Test
-    void jscnkjdnc () {
-    CalcularSimple bab = new CalcularSimple(new Torneo("A", "a", "a", TipoParticipante.PERSONA, TipoTorneoEnum.LIGA_SIMPLE));
-    for (int i=0; i<10;i++) {
+    void intentarCalulo () throws ErroresCalculo {
+    CalcularSimple bab = new CalcularSimple(10);
+    for (int i=0; i<20;i++) {
         bab.siguiente();
-        bab.Enfrentar(1);
+        bab.enfrentar(1);
     }
 
     }

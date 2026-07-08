@@ -1,9 +1,6 @@
 package Logica;
 
-import java.util.ArrayList;
-
 public class CalcularSimple implements CalcularJuego{
-    private Torneo torneo;
     private int[][] partido = new int[30][30];
 
     private int participante1;
@@ -14,21 +11,19 @@ public class CalcularSimple implements CalcularJuego{
 
     private boolean end = false;
 
-    CalcularSimple(Torneo torneo) {
-        this.torneo = torneo;
-        for (int i=0;i<9;i++){ //placeholder
+    CalcularSimple(int jugadores) {
+        for (int i=0;i<jugadores;i++){ //placeholder
             partido[i][0] = i+1;
         }
-
     }
-    public void Enfrentar(int Resultado){
-        //Enfrentamiento buffer = new Enfrentamiento(torneo.getCompetidores().get(participante1),torneo.getCompetidores().get(participante1));
-        //buffer.setResultado(Resultado);
-        //torneo.agregarEnfrentamiento(buffer);
+
+    public void enfrentar(int Resultado) throws ErroresCalculo {
         if (Resultado == 0){
             partido[partidoAct][rondaAct+1]=participante1;
         } else if (Resultado == 1){
             partido[partidoAct][rondaAct+1]=participante2;
+        } else {
+            throw new ErroresCalculo("Valor de ganador no valido [entre 1 y 0]");
         }
         partidoAct++;
     }
@@ -56,13 +51,13 @@ public class CalcularSimple implements CalcularJuego{
             }
         }
     }
+
     @Override
     public int getTipo() {
         return 1;
     }
-
     @Override
     public int getCompetidores() {
-        return torneo.getCantidadCompetidores();
+        return 666;
     }
 }

@@ -7,13 +7,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CalcularDoblesTest {
     @Test
-    void jscnkjdnc () {
-        CalcularDobles bab = new CalcularDobles(new Torneo("A", "a", "a", TipoParticipante.PERSONA, TipoTorneoEnum.ELIMINACION_DOBLE));
+    void IntentarCalculo () throws ErroresCalculo {
+        CalcularDobles bab = new CalcularDobles(10);
         for (int i=0; i<30;i++) {
             bab.siguiente();
-            bab.Enfrentar(0);
+            bab.enfrentar(0);
         }
-
     }
 
 }
