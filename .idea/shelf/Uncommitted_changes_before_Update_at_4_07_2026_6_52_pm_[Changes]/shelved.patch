@@ -1,0 +1,156 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"84c50cba-9721-4702-a204-1353f6b09a0f\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/ParticipanteFactory.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/TipoParticipante.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/BotonesPanelPrincipal.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/BotonesPanelPrincipal.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/ClickBotones.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/ClickBotonesPanelPrincipal.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/PanelPrincipal.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/PanelPrincipal.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/Proxy.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/Proxy.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/Ventana.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/Ventana.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/Equipo.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/ParticipanteEquipo.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/Inscribible.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/Organizador.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/Participante.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/Participante.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/ParticipantePersona.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/ParticipantePersona.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/Torneo.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/Torneo.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/deLiga.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/DeLiga.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/eliminatorioDoble.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/EliminatoriaDoble.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/eliminatorioSimple.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/EliminatoriaSimple.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/tipoTorneo.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/TipoTorneo.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/todosContraTodos.java\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"Enum\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;BastianCab&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/BastianCab/ProyectoFinal-DOO.git&quot;,\r\n    &quot;accountId&quot;: &quot;518426ef-5f91-41bd-8b80-fa5cdd92b0a3&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 6\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"3EyiNdtaC8MLEd6Yn1JeYxBiOOg\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.main.executor&quot;: &quot;Run&quot;,\r\n    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;/home/laura_pro/Documentos/Universidad/ProyectoFinal-DOO&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"84c50cba-9721-4702-a204-1353f6b09a0f\" name=\"Changes\" comment=\"\" />\r\n      <created>1781157173802</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1781157173802</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 7802309e90f160642b69a93e9b446920f96b8ca0)
++++ b/.idea/workspace.xml	(date 1783205561179)
+@@ -4,26 +4,8 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="84c50cba-9721-4702-a204-1353f6b09a0f" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/ParticipanteFactory.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/TipoParticipante.java" afterDir="false" />
++    <list default="true" id="84c50cba-9721-4702-a204-1353f6b09a0f" name="Changes" comment="Finalizacion de Gui en PanelCreacion, faltan mejoras menores visuales">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/BotonesPanelPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/BotonesPanelPrincipal.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/ClickBotones.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/ClickBotonesPanelPrincipal.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/PanelPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/PanelPrincipal.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/Proxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/Proxy.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/Ventana.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/Ventana.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/Equipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/ParticipanteEquipo.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/Inscribible.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/Organizador.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/Participante.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/Participante.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/ParticipantePersona.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/ParticipantePersona.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/Torneo.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/Torneo.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/deLiga.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/DeLiga.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/eliminatorioDoble.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/EliminatoriaDoble.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/eliminatorioSimple.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/EliminatoriaSimple.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/tipoTorneo.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/TipoTorneo.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/todosContraTodos.java" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -40,6 +22,11 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="RicardoP1" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="GitHubPullRequestSearchHistory">{
+@@ -54,33 +41,60 @@
+     &quot;accountId&quot;: &quot;518426ef-5f91-41bd-8b80-fa5cdd92b0a3&quot;
+   }
+ }</component>
++  <component name="ProblemsViewState">
++    <option name="selectedTabId" value="CurrentFile" />
++  </component>
+   <component name="ProjectColorInfo">{
+   &quot;associatedIndex&quot;: 6
+ }</component>
+   <component name="ProjectId" id="3EyiNdtaC8MLEd6Yn1JeYxBiOOg" />
++  <component name="ProjectLevelVcsManager">
++    <ConfirmationsSetting value="2" id="Add" />
++  </component>
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;Application.main.executor&quot;: &quot;Run&quot;,
+-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;/home/laura_pro/Documentos/Universidad/ProyectoFinal-DOO&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "Application.blub.executor": "Run",
++    "Application.main.executor": "Run",
++    "ModuleVcsDetector.initialDetectionPerformed": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "RunOnceActivity.git.unshallow": "true",
++    "git-widget-placeholder": "main",
++    "kotlin-language-version-configured": "true",
++    "last_opened_file_path": "C:/Oliv's Cave/Celeste made me do this/java/Trabajo fin Doo/ProyectoFinal-DOO",
++    "project.structure.last.edited": "SDKs",
++    "project.structure.proportion": "0.15",
++    "project.structure.side.proportion": "0.2",
++    "settings.editor.selected.configurable": "preferences.general"
+   }
+-}</component>
++}]]></component>
++  <component name="RecentsManager">
++    <key name="CopyClassDialog.RECENTS_KEY">
++      <recent name="GUI" />
++    </key>
++  </component>
++  <component name="RunManager">
++    <configuration name="main" type="Application" factoryName="Application" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="GUI.main" />
++      <module name="GestionTorneos" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="GUI.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++  </component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+-        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
++        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.32098.37" />
+       </set>
+     </attachedChunks>
+   </component>
+@@ -92,6 +106,28 @@
+       <option name="presentableId" value="Default" />
+       <updated>1781157173802</updated>
+     </task>
++    <task id="LOCAL-00001" summary="Bases para el PanelCreacion, con su propio proxy (sujeto a cambios), y sus botones">
++      <option name="closed" value="true" />
++      <created>1783191947013</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1783191947014</updated>
++    </task>
++    <task id="LOCAL-00002" summary="Finalizacion de Gui en PanelCreacion, faltan mejoras menores visuales">
++      <option name="closed" value="true" />
++      <created>1783200728103</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1783200728103</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="Bases para el PanelCreacion, con su propio proxy (sujeto a cambios), y sus botones" />
++    <MESSAGE value="Finalizacion de Gui en PanelCreacion, faltan mejoras menores visuales" />
++    <option name="LAST_COMMIT_MESSAGE" value="Finalizacion de Gui en PanelCreacion, faltan mejoras menores visuales" />
++  </component>
+ </project>
+\ No newline at end of file
