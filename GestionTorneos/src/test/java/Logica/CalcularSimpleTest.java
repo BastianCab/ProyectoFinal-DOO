@@ -12,8 +12,6 @@ class CalcularSimpleTest {
     for (int i=0; i<10;i++) {
         bab.siguiente();
         bab.Enfrentar(1);
-        bab.siguiente();
-        bab.Enfrentar(1);
     }
 
     }

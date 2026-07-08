@@ -35,20 +35,25 @@ public class CalcularSimple implements CalcularJuego{
 
     @Override
     public void siguiente() {
-        if (partido[partidoAct*2 +1][rondaAct]==0){
-            if (partido[partidoAct*2][rondaAct]!=0){
-                partido[partidoAct][rondaAct+1]=partido[partidoAct*2][rondaAct];
-            }
-            partidoAct = 0;
-            participante1=partido[partidoAct*2][rondaAct+1];
-            participante2=partido[partidoAct*2 +1][rondaAct+1];
-            rondaAct++;
+        if (end == true) {
+            System.out.println("fin del torneo, ganador: " + String.valueOf(partido[0][rondaAct]));
         } else {
-            participante1=partido[partidoAct*2][rondaAct];
-            participante2=partido[partidoAct*2 +1][rondaAct];
-        }
-        if(participante1==0 && participante2==0){
-            end = true;
+            if (partido[partidoAct * 2 + 1][rondaAct] == 0) {
+                if (partido[partidoAct * 2][rondaAct] != 0) {
+                    partido[partidoAct][rondaAct + 1] = partido[partidoAct * 2][rondaAct];
+                }
+                partidoAct = 0;
+                participante1 = partido[partidoAct * 2][rondaAct + 1];
+                participante2 = partido[partidoAct * 2 + 1][rondaAct + 1];
+                if (participante2 == 0) {
+                    end = true;
+                } else {
+                    rondaAct++;
+                }
+            } else {
+                participante1 = partido[partidoAct * 2][rondaAct];
+                participante2 = partido[partidoAct * 2 + 1][rondaAct];
+            }
         }
     }
     @Override
@@ -60,6 +65,4 @@ public class CalcularSimple implements CalcularJuego{
     public int getCompetidores() {
         return torneo.getCantidadCompetidores();
     }
-
-
 }

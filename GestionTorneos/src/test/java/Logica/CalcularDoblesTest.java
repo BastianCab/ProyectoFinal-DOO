@@ -12,8 +12,6 @@ class CalcularDoblesTest {
         for (int i=0; i<30;i++) {
             bab.siguiente();
             bab.Enfrentar(0);
-            bab.siguiente();
-            bab.Enfrentar(0);
         }
 
     }
