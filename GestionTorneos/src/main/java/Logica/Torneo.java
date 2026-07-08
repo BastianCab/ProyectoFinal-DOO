@@ -14,6 +14,7 @@ public class Torneo {
     private String disciplina;
     private TipoParticipante tipoParticipante;
     private TipoTorneoEnum tipoTorneo;
+    private CalcularJuegoPlaceholder estrategia;
     private ArrayList<Enfrentamiento> enfrentamientos;
     private ArrayList<Participante> competidores;
     private List<ObservadorTorneo> observadores = new ArrayList<>();
@@ -22,12 +23,13 @@ public class Torneo {
      * Crea un torneo, inicializa cada característica del torneo,
      * pero se deben definir luego por un organizador
      */
-    public Torneo(String nombreOrganizador, String nombre, String disciplina, TipoParticipante tipoParticipante, TipoTorneoEnum tipoTorneo) {
+    public Torneo(String nombreOrganizador, String nombre, String disciplina, TipoParticipante tipoParticipante, TipoTorneoEnum tipoTorneo, CalcularJuegoPlaceholder estrategia) {
         this.nombreOrganizador = nombreOrganizador;
         this.nombre = nombre;
         this.disciplina = disciplina;
         this.tipoParticipante = tipoParticipante;
         this.tipoTorneo = tipoTorneo;
+        this.estrategia = estrategia;
         this.enfrentamientos = new ArrayList();
         this.competidores = new ArrayList();
     }
@@ -59,6 +61,11 @@ public class Torneo {
         for (ObservadorTorneo obs : observadores) {
             obs.actualizar(datosDelPartido);
         }
+    }
+
+    public ArrayList<Enfrentamiento> calcularEnfrentamientosTorneo(){
+        this.enfrentamientos = this.estrategia.calcularEnfrentamientos(this.competidores);
+        return this.enfrentamientos;
     }
     public int getCantidadCompetidores(){
         return competidores.size();
