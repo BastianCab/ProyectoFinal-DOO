@@ -24,7 +24,7 @@ public class Proxy {
      * @param disciplina El deporte o juego del torneo
      * @param tipoTorneo El formato del torneo (ej. Liga, Eliminatoria)
      */
-    public void crearTorneo(String nombreOrganizador, String nombre, String disciplina, String tipoTorneo) {
+    public void crearTorneo(String nombreOrganizador, String nombre, String disciplina,TipoParticipante tipoParticipante, TipoTorneoEnum tipoTorneo) {
         if (nombreOrganizador == null || nombreOrganizador.trim().isEmpty()) {
             System.out.println("[ERROR PROXY] El nombre del organizador no puede estar vacío.");
             return;
@@ -40,19 +40,43 @@ public class Proxy {
             return;
         }
 
-        if (tipoTorneo == null || tipoTorneo.trim().isEmpty()) {
-            System.out.println("[ERROR PROXY] Debe seleccionar un tipo de torneo.");
-            return;
-        }
-
-        this.torneo = new Torneo(nombreOrganizador, nombre, disciplina, tipoTorneo);
+        this.torneo = new Torneo(nombreOrganizador, nombre, disciplina, tipoParticipante ,tipoTorneo);
 
         // Visualizacion temporal para la consola
         System.out.println("[PROXY LOG] ¡Torneo instanciado con éxito en la memoria!");
         System.out.println("  -> Nombre Organizador: " + this.torneo.getNombreOrganizador());
         System.out.println("  -> Nombre: " + this.torneo.getNombre());
         System.out.println("  -> Disciplina: " + this.torneo.getDisciplina());
-        System.out.println("  -> Formato: " + this.torneo.getTipoTorneo());
+        System.out.println("  -> Modalidad: " + this.torneo.getTipoParticipante());
+        System.out.println("  -> Formato: " + this.torneo.getTipoTorneo().getNombre());
+    }
+
+    public void inscribirParticipante(String nombre, String correo, String numeroTelefonico, TipoParticipante tipoParticipante){
+        if (nombre == null || nombre.trim().isEmpty()) {
+            System.out.println("[ERROR PROXY] El nombre no puede estar vacío.");
+            return;
+        }
+
+        if (correo == null || correo.trim().isEmpty()) {
+            System.out.println("[ERROR PROXY] El correo no puede estar vacío.");
+            return;
+        }
+
+        if (numeroTelefonico == null || numeroTelefonico.trim().isEmpty()) {
+            System.out.println("[ERROR PROXY] El número de teléfono no puede estar vacío.");
+            return;
+        }
+        this.participante = new Participante(tipoParticipante, nombre, correo, numeroTelefonico);
+        this.torneo.inscribirParticipante(participante);
+
+        // Visualizacion temporal para la consola
+        System.out.println("[PROXY LOG] ¡Participante agregado con éxito al torneo!");
+        System.out.println("  -> Tipo: " + this.participante.getTipo());
+        System.out.println("  -> Nombre: " + this.participante.getNombre());
+        System.out.println("  -> Correo: " + this.participante.getCorreo());
+        System.out.println("  -> Número de teléfono: " + this.participante.getNumeroTelefonico());
+
+        this.participante = null;
     }
 
     /**

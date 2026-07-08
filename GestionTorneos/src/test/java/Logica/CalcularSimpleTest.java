@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CalcularSimpleTest {
     @Test
     void jscnkjdnc () {
-    CalcularSimple bab = new CalcularSimple(new Torneo("A", "a", "a", "a"));
+    CalcularSimple bab = new CalcularSimple(new Torneo("A", "a", "a", TipoParticipante.PERSONA, TipoTorneoEnum.LIGA_SIMPLE));
     for (int i=0; i<10;i++) {
         bab.siguiente();
         bab.Enfrentar(1);

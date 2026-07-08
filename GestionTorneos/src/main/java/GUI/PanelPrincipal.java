@@ -24,7 +24,7 @@ public class PanelPrincipal extends JPanel {
         JLabel Titulo = new JLabel("Gestor de Torneos");
         Titulo.setFont(new Font("Arial", Font.BOLD, 40));
 
-        Titulo.setBounds(421, 86, 358, 200);
+        Titulo.setBounds(421, 86, 400, 200);
         botones.setBounds(450,300,300,260);
 
         this.add(Titulo);
