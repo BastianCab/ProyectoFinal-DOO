@@ -40,7 +40,20 @@ public class Proxy {
             return;
         }
 
-        this.torneo = new Torneo(nombreOrganizador, nombre, disciplina, tipoParticipante ,tipoTorneo);
+        CalcularJuegoPlaceholder estrategia = null;
+        switch (tipoTorneo) {
+            case LIGA_SIMPLE:
+                estrategia = new CalcularLigaPlaceholder();
+                break;
+            case ELIMINACION_DIRECTA:
+                estrategia = new CalcularSimplePlaceholder();
+                break;
+            case ELIMINACION_DOBLE:
+                estrategia = new CalcularDoblesPlaceholder();
+                break;
+        }
+
+        this.torneo = new Torneo(nombreOrganizador, nombre, disciplina, tipoParticipante ,tipoTorneo, estrategia);
 
         // Visualizacion temporal para la consola
         System.out.println("[PROXY LOG] ¡Torneo instanciado con éxito en la memoria!");
