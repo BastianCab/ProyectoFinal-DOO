@@ -21,11 +21,13 @@ El siguiente diagrama ilustra las funcionalidades del sistema y las interaccione
 ---
 
 ## 4. Capturas de Pantalla de la Interfaz
-![Menu](https://github.com/BastianCab/ProyectoFinal-DOO/blob/main/1.png)
-![Crear Torneo paso 1](https://github.com/BastianCab/ProyectoFinal-DOO/blob/main/2.png)
-![Crear Torneo paso 2](https://github.com/BastianCab/ProyectoFinal-DOO/blob/main/3.png)
-![Crear Torneo paso 3]()
-![Espectar Torneo](https://github.com/BastianCab/ProyectoFinal-DOO/blob/main/5.png)
+![Menu](https://github.com/BastianCab/ProyectoFinal-DOO/blob/main/paso1.png)
+![Crear Torneo paso 1](https://github.com/BastianCab/ProyectoFinal-DOO/blob/main/paso2.png)
+![Crear Torneo paso 1](https://github.com/BastianCab/ProyectoFinal-DOO/blob/main/paso3.png)
+![Crear Torneo paso 1](https://github.com/BastianCab/ProyectoFinal-DOO/blob/main/paso4.png)
+![Espectar Torneo](https://github.com/BastianCab/ProyectoFinal-DOO/blob/main/paso5.png)
+--
+## 5. Diagrama UML
 --
 ## 6. Patrones de Diseño Implementados
 
