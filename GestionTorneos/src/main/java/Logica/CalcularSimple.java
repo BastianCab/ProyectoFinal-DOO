@@ -63,7 +63,7 @@ public class CalcularSimple implements CalcularJuego{
             }
         }
     }
-
+ /*
     @Override
     public List<Enfrentamiento> calcularEnfrentamientos(List<Participante> competidores) {
         List<Enfrentamiento> partidos = new ArrayList<>();
@@ -78,7 +78,6 @@ public class CalcularSimple implements CalcularJuego{
 
         int partidosFaltantes = (competidores.size() / 2) - 1;
         for (int i = 0; i < partidosFaltantes; i++) {
-
             Participante fantasma1 = competidores.get((EnfrentamientosInfo.get(i))[0]);
             Participante fantasma2 = competidores.get((EnfrentamientosInfo.get(i))[1]);
             Enfrentamiento A = new Enfrentamiento(fantasma1, fantasma2);
@@ -86,6 +85,29 @@ public class CalcularSimple implements CalcularJuego{
             partidos.add(A);
         }
 
+        return partidos;
+
+    }
+    */
+    @Override
+    public List<Enfrentamiento> calcularEnfrentamientos(List<Participante> competidores) {
+        List<Enfrentamiento> partidos = new ArrayList<>();
+        Collections.shuffle(competidores);
+
+        // 1. CREAMOS LA PRIMERA RONDA (Partidos reales)
+        for (int i = 0; i < competidores.size(); i += 2) {
+            Participante p1 = competidores.get(i);
+            Participante p2 = (i + 1 < competidores.size()) ? competidores.get(i + 1) : new Participante(null, "Por definir", null, null);
+            partidos.add(new Enfrentamiento(p1, p2));
+        }
+
+        int partidosFaltantes = (competidores.size() / 2) - 1;
+        for (int i = 0; i < partidosFaltantes; i++) {
+            Participante fantasma1 = new Participante(null, "Por definir", "-", "-");
+            Participante fantasma2 = new Participante(null, "Por definir", "-", "-");
+
+            partidos.add(new Enfrentamiento(fantasma1, fantasma2));
+        }
         return partidos;
     }
 
