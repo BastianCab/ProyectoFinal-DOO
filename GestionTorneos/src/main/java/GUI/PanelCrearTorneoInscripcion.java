@@ -6,7 +6,13 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Representa el segundo paso visual de la creación de torneos.
+ * En este panel, el usuario inscribe a los competidores (ya sean equipos o jugadores individuales),
+ * capturando sus datos de contacto y mostrándolos en una lista visual.
+ */
 public class PanelCrearTorneoInscripcion extends JPanel {
+
     private PanelCrearTorneoMaster panelMaster;
     private Proxy proxy;
 
@@ -24,8 +30,15 @@ public class PanelCrearTorneoInscripcion extends JPanel {
     private JList<String> listaVisualCompetidores;
     private DefaultListModel<String> modeloLista;
 
+    // Almacena la modalidad seleccionada en el Paso 1 para uso del Proxy
     private TipoParticipante tipoActual;
 
+    /**
+     * Constructor de la interfaz de inscripciones.
+     * Prepara el formulario de ingreso y la lista de visualización.
+     * @param master El controlador principal para la navegación entre ventanas.
+     * @param proxy  El intermediario lógico encargado de registrar a los participantes.
+     */
     public PanelCrearTorneoInscripcion(PanelCrearTorneoMaster master, Proxy proxy) {
         this.panelMaster = master;
         this.proxy = proxy;
@@ -43,6 +56,7 @@ public class PanelCrearTorneoInscripcion extends JPanel {
         lblTitulo.setBounds(20, 10, 550, 40);
         panelFormulario.add(lblTitulo);
 
+        // Los textos de los JLabel se inician vacíos porque se llenan dinámicamente
         lblNombre = new JLabel("");
         lblNombre.setBounds(20, 70, 180, 30);
         panelFormulario.add(lblNombre);
@@ -75,6 +89,7 @@ public class PanelCrearTorneoInscripcion extends JPanel {
         lblLista.setBounds(20, 240, 200, 20);
         panelFormulario.add(lblLista);
 
+        // Lista visual con barra de desplazamiento para los inscritos
         modeloLista = new DefaultListModel<>();
         listaVisualCompetidores = new JList<>(modeloLista);
         JScrollPane scrollLista = new JScrollPane(listaVisualCompetidores);
@@ -97,38 +112,64 @@ public class PanelCrearTorneoInscripcion extends JPanel {
         this.add(panelFormulario);
     }
 
+    /**
+     * Adapta los textos de las etiquetas y botones de la interfaz dependiendo de
+     * la modalidad elegida por el usuario en el paso anterior.
+     * @param modalidad El tipo de participante (ej. EQUIPO o INDIVIDUAL).
+     */
     public void personalizarTextos(TipoParticipante modalidad) {
 
         // Guardamos la modalidad para cuando el Proxy la necesite al hacer clic en Inscribir
         this.tipoActual = modalidad;
 
-        // Asumiendo que tu Enum tiene un valor llamado EQUIPO (ajústalo a tu código)
         if (modalidad == TipoParticipante.EQUIPO) {
             lblNombre.setText("Nombre del Equipo:");
             btnAgregar.setText("Inscribir Equipo");
             lblLista.setText("Equipos Inscritos:");
         } else {
-            // Si es jugador individual / competidor
             lblNombre.setText("Nombre del Competidor:");
             btnAgregar.setText("Inscribir Competidor");
             lblLista.setText("Competidores Inscritos:");
         }
 
-        // Forzamos a Java a redibujar el panel con los nuevos textos por si acaso
+        // Fuerza a Java Swing a redibujar el panel con los nuevos textos
         this.revalidate();
         this.repaint();
     }
 
+    /**
+     * Limpia los campos de texto y vacía la lista de competidores visuales.
+     */
+    public void limpiarCampos() {
+        txtNombreParticipante.setText("");
+        txtCorreo.setText("");
+        txtNumeroTelefonico.setText("");
+        modeloLista.clear();
+    }
+
+    /**
+     * Clase interna encargada de gestionar los eventos de los botones en este panel.
+     * Centraliza la validación de ingreso y la navegación.
+     */
     private class ClickBotonesPanelCrearTorneoInscripcion implements ActionListener {
+
+        /**
+         * Maneja las acciones dependiendo del botón que haya sido presionado:
+         * - Agregar: Valida los campos vacíos, inscribe al participante vía Proxy y actualiza la lista.
+         * - Volver: Retorna al paso 1 de configuración básica.
+         * - Siguiente: Verifica que exista un mínimo de competidores antes de avanzar al paso 3.
+         *  @param e El evento de clic detectado.
+         */
         @Override
         public void actionPerformed(ActionEvent e) {
 
+            // Lógica para registrar a un nuevo participante
             if (e.getSource() == btnAgregar) {
                 String nombre = txtNombreParticipante.getText().trim();
                 String correo = txtCorreo.getText().trim();
                 String telefono = txtNumeroTelefonico.getText().trim();
 
-                // Validamos que los tres campos tengan información
+                // Validación de seguridad para evitar datos en blanco
                 if (nombre.isEmpty() || correo.isEmpty() || telefono.isEmpty()) {
                     JOptionPane.showMessageDialog(null,
                             "Por favor completa el nombre, correo y teléfono.",
@@ -136,27 +177,33 @@ public class PanelCrearTorneoInscripcion extends JPanel {
                     return;
                 }
 
+                // Actualización de la interfaz y envío de datos al backend
                 modeloLista.addElement(nombre + " | " + correo + " | " + telefono);
-
                 proxy.inscribirParticipante(nombre, correo, telefono, tipoActual);
 
+                // Limpieza de campos para el siguiente ingreso
                 txtNombreParticipante.setText("");
                 txtCorreo.setText("");
                 txtNumeroTelefonico.setText("");
                 txtNombreParticipante.requestFocus();
             }
 
+            // Lógica de navegación: Regresar
             else if (e.getSource() == btnVolver) {
                 panelMaster.volverAPaso1();
             }
 
+            // Lógica de navegación: Avanzar
             else if (e.getSource() == btnSiguiente) {
+
+                // Validación estructural: Un torneo requiere al menos 2 competidores
                 if (modeloLista.getSize() < 2) {
                     JOptionPane.showMessageDialog(null,
                             "Debes inscribir al menos a 2 competidores.",
                             "Faltan inscritos", JOptionPane.WARNING_MESSAGE);
                     return;
                 }
+
                 panelMaster.irAPaso3();
             }
         }

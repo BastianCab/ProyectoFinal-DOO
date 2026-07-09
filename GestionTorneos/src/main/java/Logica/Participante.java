@@ -11,6 +11,15 @@ public class Participante {
     String correo;
     String numeroTelefonico;
 
+    /**
+     * Constructor principal de la clase Participante.
+     * Inicializa un nuevo competidor (ya sea un jugador individual o un equipo)
+     * registrando su modalidad y su información de contacto básica para el torneo.
+     * @param tipo             La modalidad del participante obtenida del enumerador (Ej. PERSONA o EQUIPO).
+     * @param nombre           El nombre completo del jugador o el nombre oficial del equipo.
+     * @param correo           La dirección de correo electrónico para el envío de notificaciones.
+     * @param numeroTelefonico El número de teléfono de contacto del participante o su representante.
+     */
     public Participante(TipoParticipante tipo, String nombre, String correo, String numeroTelefonico){
         this.tipo = tipo;
         this.nombre = nombre;
