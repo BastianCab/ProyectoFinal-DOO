@@ -1,6 +1,5 @@
 package GUI;
 
-
 import Logica.TipoTorneoEnum;
 import Logica.TipoParticipante;
 import javax.swing.*;
@@ -8,7 +7,13 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Representa el primer paso visual de la creación de torneos.
+ * En este panel, el usuario ingresa la información básica del torneo, como el organizador,
+ * nombre, disciplina, y selecciona mediante listas desplegables la modalidad y el formato.
+ */
 public class PanelCrearTorneoConfiguracionBasica extends JPanel {
+
     private PanelCrearTorneoMaster panelMaster;
     private Proxy proxy;
 
@@ -20,6 +25,12 @@ public class PanelCrearTorneoConfiguracionBasica extends JPanel {
     private JTextArea txtDescripcionFormato;
     private JComboBox<TipoParticipante> comboTipoParticipante;
 
+    /**
+     * Constructor de la interfaz de configuración básica.
+     * Inicializa y posiciona todos los componentes visuales del formulario.
+     * @param master El controlador principal de los paneles que permite la navegación entre pasos.
+     * @param proxy  El intermediario que recibirá y enviará los datos a la capa lógica.
+     */
     public PanelCrearTorneoConfiguracionBasica(PanelCrearTorneoMaster master, Proxy proxy) {
         this.panelMaster = master;
         this.proxy = proxy;
@@ -77,15 +88,17 @@ public class PanelCrearTorneoConfiguracionBasica extends JPanel {
         txtDescripcionFormato.setBounds(220, 310, 300, 60);
         txtDescripcionFormato.setWrapStyleWord(true);
         txtDescripcionFormato.setLineWrap(true);
-        txtDescripcionFormato.setEditable(false); // Evita que el usuario escriba encima
+        txtDescripcionFormato.setEditable(false);
         txtDescripcionFormato.setFocusable(false);
-        txtDescripcionFormato.setBackground(new Color(245, 245, 245)); // Un gris muy clarito
+        txtDescripcionFormato.setBackground(new Color(245, 245, 245));
         txtDescripcionFormato.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         panelFormulario.add(txtDescripcionFormato);
 
+        // Configuración inicial de la descripción del formato
         TipoTorneoEnum formatoInicial = (TipoTorneoEnum) comboFormatos.getSelectedItem();
         txtDescripcionFormato.setText(formatoInicial.getDescripcion());
 
+        // Actualiza la descripción en tiempo real cuando se elige un nuevo formato
         comboFormatos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -104,9 +117,34 @@ public class PanelCrearTorneoConfiguracionBasica extends JPanel {
     }
 
     /**
-     * Maneja los clics de la pantalla de Configuración Básica.
+     * Limpia y reinicia todos los campos del formulario.
+     * Se utiliza para preparar la pantalla para una nueva creación de torneo,
+     * borrando los datos de interacciones anteriores.
+     */
+    public void limpiarCampos() {
+        txtOrganizador.setText("");
+        txtNombreTorneo.setText("");
+        txtDisciplina.setText("");
+        comboTipoParticipante.setSelectedIndex(0);
+        comboFormatos.setSelectedIndex(0);
+
+        TipoTorneoEnum formatoInicial = (TipoTorneoEnum) comboFormatos.getSelectedItem();
+        if (formatoInicial != null) {
+            txtDescripcionFormato.setText(formatoInicial.getDescripcion());
+        }
+    }
+
+    /**
+     * Clase interna encargada de gestionar los eventos de los botones en este panel.
+     * Aplica el patrón de diseño Event Listener.
      */
     private class ClickBotonesPanelCrearTorneoConfiguracionBasica implements ActionListener {
+        /**
+         * Se ejecuta cuando el usuario presiona el botón "Siguiente".
+         * Valida que los campos no estén vacíos, envía los datos al Proxy para instanciar el torneo,
+         * y le indica al Master que cambie a la pantalla del Paso 2.
+         * @param e El evento de clic detectado por el botón.
+         */
         @Override
         public void actionPerformed(ActionEvent e) {
 
@@ -116,6 +154,7 @@ public class PanelCrearTorneoConfiguracionBasica extends JPanel {
             TipoParticipante tipoParticipante = (TipoParticipante) comboTipoParticipante.getSelectedItem();
             TipoTorneoEnum formato = (TipoTorneoEnum) comboFormatos.getSelectedItem();
 
+            // Validación de seguridad contra campos en blanco
             if (organizador.isEmpty() || torneo.isEmpty() || disciplina.isEmpty()) {
                 JOptionPane.showMessageDialog(null,
                         "Por favor, completa todos los campos.",

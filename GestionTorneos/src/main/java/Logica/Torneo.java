@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Clase que representa un torneo que se quiere organizar, contiene:
- * el nombre del torneo, la disciplina, el formato, una lista de enfrentamientos
- * y una lista de competidores, implementa el patrón "Observer"
+ * clase Torneo que centraliza toda la información del evento (nombre, disciplina, formato),
+ * gestiona las listas de competidores y orquesta la generación del calendario.
+ * Arquitectónicamente, esta clase aplica el patron de diseño Strategy: Delega la lógica
+ * matemática de emparejamiento a la interfaz CalcularJuegoPlaceholder.
  */
 public class Torneo {
     private String nombreOrganizador;
@@ -20,8 +21,15 @@ public class Torneo {
     private List<ObservadorTorneo> observadores = new ArrayList<>();
 
     /**
-     * Crea un torneo, inicializa cada característica del torneo,
-     * pero se deben definir luego por un organizador
+     * Constructor principal que inicializa el estado base del torneo.
+     * Recibe la configuración estructural y la herramienta lógica (Strategy)
+     * que utilizará más adelante para armar los partidos.
+     * @param nombreOrganizador El nombre de la persona o entidad a cargo.
+     * @param nombre El nombre oficial del torneo.
+     * @param disciplina El deporte o videojuego que se competirá.
+     * @param tipoParticipante La modalidad del torneo (ej. INDIVIDUAL o EQUIPO).
+     * @param tipoTorneo El formato de llaves o liga.
+     * @param estrategia El algoritmo concreto (Strategy) inyectado para generar los cruces.
      */
     public Torneo(String nombreOrganizador, String nombre, String disciplina, TipoParticipante tipoParticipante, TipoTorneoEnum tipoTorneo, CalcularJuego estrategia) {
         this.nombreOrganizador = nombreOrganizador;
@@ -30,12 +38,13 @@ public class Torneo {
         this.tipoParticipante = tipoParticipante;
         this.tipoTorneo = tipoTorneo;
         this.estrategia = estrategia;
-        this.enfrentamientos = new ArrayList();
-        this.competidores = new ArrayList();
+        this.enfrentamientos = new ArrayList<>();
+        this.competidores = new ArrayList<>();
     }
 
     /**
-     * Agrega de a un solo participante a la lista existente
+     * Añade un nuevo competidor a la lista oficial de inscritos del torneo.
+     * * @param nuevoParticipante El objeto Participante con sus datos ya validados.
      */
     public void inscribirParticipante(Participante nuevoParticipante) {
         this.competidores.add(nuevoParticipante);
@@ -43,90 +52,77 @@ public class Torneo {
     }
 
     /**
-     * Agrega de a uno los enfrentamientos decididos por el organizador
+     * Ejecuta el patrón Strategy. El torneo le entrega la lista de competidores
+     * a su estrategia inyectada, recibe el calendario de partidos armados,
+     * lo guarda en su memoria interna y lo devuelve a la interfaz.
+     * @return La lista definitiva de enfrentamientos generados.
      */
-    public void agregarEnfrentamiento(Enfrentamiento nuevoEnfrentamiento) {
-        this.enfrentamientos.add(nuevoEnfrentamiento);
-    }
-
-    public void agregarObservador(ObservadorTorneo observador) {
-        observadores.add(observador);
-    }
-
-    public void registrarResultado(String partido, String resultado) {
-        System.out.println("\n[SISTEMA] Organizador registró: " + partido + " -> " + resultado);
-
-        String datosDelPartido = partido + " quedó " + resultado;
-
-        for (ObservadorTorneo obs : observadores) {
-            obs.actualizar(datosDelPartido);
-        }
-    }
-
     public List<Enfrentamiento> calcularEnfrentamientosTorneo(){
         this.enfrentamientos = this.estrategia.calcularEnfrentamientos(this.competidores);
         return this.enfrentamientos;
     }
+
+    /**
+     * Obtiene el número exacto de participantes inscritos actualmente.
+     * @return Cantidad de competidores.
+     */
     public int getCantidadCompetidores(){
         return competidores.size();
     }
 
     /**
-     * Getter del nombre del torneo
-     * @return el nombre del torneo
+     * Getter del organizador del torneo.
+     * @return El nombre del organizador.
      */
     public String getNombreOrganizador() {
         return nombreOrganizador;
     }
 
     /**
-     * Getter del nombre del torneo
-     * @return el nombre del torneo
+     * Getter del nombre del torneo.
+     * @return El nombre oficial del torneo.
      */
     public String getNombre() {
         return nombre;
     }
 
     /**
-     * Getter de la disciplina del torneo
-     * @return la disciplina del torneo
+     * Getter de la disciplina del torneo.
+     * @return La disciplina o deporte en competencia.
      */
     public String getDisciplina() {
         return disciplina;
     }
 
     /**
-     * Getter del tipo de participante del torneo
-     * @return el tipo de participante del torneo
+     * Getter del tipo de participante.
+     * @return La modalidad del torneo (ej. EQUIPO).
      */
     public TipoParticipante getTipoParticipante() {
         return tipoParticipante;
     }
 
     /**
-     * Getter del formato del torneo
-     * @return el formato del torneo
+     * Getter del formato del torneo.
+     * @return El Enum que representa la estructura del torneo.
      */
     public TipoTorneoEnum getTipoTorneo() {
         return tipoTorneo;
     }
 
-
     /**
-     * Getter de la lista de competidores
-     * @return la lista que contiene a los competidores del torneo
+     * Getter de la lista oficial de competidores.
+     * @return La lista que contiene a todos los participantes inscritos.
      */
     public List<Participante> getCompetidores() {
         return competidores;
     }
 
     /**
-     * Getter de la lista de enfrentamientos del torneo
-     * @return la lista que contiene a los enfrentamientos del torneo
+     * Getter del calendario de partidos.
+     * @return La lista que contiene todos los enfrentamientos del torneo.
      */
     public List<Enfrentamiento> getEnfrentamientos() {
         return enfrentamientos;
     }
-
-
 }
