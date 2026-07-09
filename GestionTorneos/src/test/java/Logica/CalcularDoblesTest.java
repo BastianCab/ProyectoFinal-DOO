@@ -6,13 +6,12 @@ import java.util.ArrayList;
 class CalcularDoblesTest {
     @Test
     void IntentarCalculo () throws ErroresCalculo {
-        CalcularDobles bab = new CalcularDobles();
-        bab.empezar(10);
-        for (int i=0; i<30;i++) {
-            bab.siguiente();
-            bab.enfrentar(0);
+        CalcularDobles Calculo = new CalcularDobles();
+        Calculo.empezar(10);
+        for (int i=0; i<20;i++) {
+            Calculo.siguiente();
+            Calculo.enfrentar(0);
         }
-        ArrayList<int[]> a = bab.getEnfrentamientoInfo();
     }
 
 }

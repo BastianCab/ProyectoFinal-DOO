@@ -36,10 +36,10 @@ public class Ventana extends JFrame {
         // 2. Módulo de Creación de Torneos (El asistente por pasos que armamos)
         JPanel panelCrear = new PanelCrearTorneoMaster(proxyGlobal, panelContenedor, cardLayout);
 
-        // 3. Módulo de Registro de Resultados (En construcción)
-        JPanel panelModificar = new PanelMod(proxyGlobal);
+        // 3. Módulo de Registro de Resultados
+        JPanel panelModificar = new PanelMod(proxyGlobal,panelContenedor, cardLayout);
 
-        // 4. Módulo de Visualización (En construcción)
+        // 4. Módulo de Visualización
         JPanel panelEspectar = new PanelEspectarTorneo(proxyGlobal, panelContenedor, cardLayout);
 
         // --- REGISTRO DE LAS PANTALLAS EN EL MAZO PRINCIPAL ---

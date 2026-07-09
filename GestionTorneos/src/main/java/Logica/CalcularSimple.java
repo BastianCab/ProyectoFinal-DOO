@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+
 public class CalcularSimple implements CalcularJuego{
     int[][] partido = new int[100][20];
     int participante1;
@@ -13,18 +14,21 @@ public class CalcularSimple implements CalcularJuego{
     private int rondaAct;
 
     private boolean end = false;
-    private boolean start = true;
-
-    public CalcularSimple() {
-    }
-
+    /**
+     * Se inicia la forma del torneo despues de ser creado
+     * @param jugadores cantidad de jugadores en el torneo
+     */
     @Override
     public void empezar(int jugadores) {
         for (int i=0;i<jugadores;i++){ //placeholder
             partido[i][0] = i+1;
         }
     }
-
+    /**
+     * Metodo que indica el llamar enfrentamiento
+     * @param Resultado entre que gana participante 1 o 2
+     * @throws ErroresCalculo si hay errores al ejecutar
+     */
     @Override
     public void enfrentar(int Resultado) throws ErroresCalculo {
         if (Resultado == 0){
@@ -34,12 +38,14 @@ public class CalcularSimple implements CalcularJuego{
         } else {
             throw new ErroresCalculo("Valor de ganador no valido [entre 1 y 0]");
         }
-        if(participante1!=0 && participante2!=0) {
+        if(participante1!=0 || participante2!=0) {
             guardarEnfrentamientoInfo(participante1, participante2, Resultado);
         }
         partidoAct++;
     }
-
+    /**
+     * Se ocupa para avanzar en el torneo
+     */
     @Override
     public void siguiente() {
         if (end == true) {
@@ -64,7 +70,11 @@ public class CalcularSimple implements CalcularJuego{
             }
         }
     }
-
+    /**
+     * Crea la lista de enfrentamientos asociada al esqueleto creado
+     * @return Lista de enfrentamientos
+     * @throws DatoInvalidoException
+     */
     @Override
     public List<Enfrentamiento> calcularEnfrentamientos(List<Participante> competidores) throws DatoInvalidoException {
         List<Enfrentamiento> partidos = new ArrayList<>();
@@ -72,19 +82,19 @@ public class CalcularSimple implements CalcularJuego{
 
         int c = 0;
         for (int i = 0; i < EnfrentamientosInfo.size(); i++) {
-            Enfrentamiento A = new Enfrentamiento(competidores.get((EnfrentamientosInfo.get(i))[0]),competidores.get((EnfrentamientosInfo.get(i))[1]));
+            Enfrentamiento A = new Enfrentamiento(competidores.get((EnfrentamientosInfo.get(i))[0]-1),competidores.get((EnfrentamientosInfo.get(i))[1]-1));
             A.setResultado(EnfrentamientosInfo.get(i)[2]);
             partidos.add(A);
             c++;
         }
         // Partidos si todavia no se inicia el calculo
-        for (int i = c; i < competidores.size(); i += 2) {
+        for (int i = 0 +c; i < competidores.size(); i += 2) {
             Participante p1 = competidores.get(i);
             Participante p2 = (i + 1 < competidores.size()) ? competidores.get(i + 1) : new Participante(null, "Por definir", null, null);
             partidos.add(new Enfrentamiento(p1, p2));
         }
         int partidosFaltantes = (competidores.size() / 2) - 1;
-        for (int i = 0; i < partidosFaltantes; i++) {
+        for (int i = 0+c; i < partidosFaltantes; i++) {
             Participante fantasma1 = new Participante(null, "Por definir", "-", "-");
             Participante fantasma2 = new Participante(null, "Por definir", "-", "-");
 
@@ -95,12 +105,16 @@ public class CalcularSimple implements CalcularJuego{
     }
 
     @Override
-    public int[] getParticipantes() {
-        return new int[]{participante1,participante2};
+    public boolean getEnd() {
+        return end;
     }
 
+    /**
+     * getter que da los participantes actuales
+     * @return
+     */
     @Override
-    public int getTipo() {
-        return 1;
+    public int[] getParticipantes() {
+        return new int[]{participante1,participante2};
     }
 }

@@ -2,7 +2,7 @@ package GUI;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JPanel;
+import javax.swing.*;
 import java.awt.CardLayout;
 
 /**
@@ -39,7 +39,11 @@ public class ClickBotonesPanelPrincipal implements ActionListener {
                 cardLayout.show(panelContenedor, "PANTALLA_CREAR");
                 break;
             case (2):
-                cardLayout.show(panelContenedor, "PANTALLA_MODIFICAR");
+                if (proxy.torneo!=null) {
+                    cardLayout.show(panelContenedor, "PANTALLA_MODIFICAR");
+                } else {
+                    JOptionPane.showMessageDialog(null, "No hay un torneo todavia", "Ranura Vacía", JOptionPane.ERROR_MESSAGE);
+                }
                 break;
             case (3):
                 cardLayout.show(panelContenedor, "PANTALLA_ESPECTAR");

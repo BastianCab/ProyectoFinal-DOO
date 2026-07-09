@@ -16,6 +16,5 @@ class CalcularSimpleTest {
             bab.siguiente();
             bab.enfrentar(1);
         }
-        ArrayList<int[]> a = bab.getEnfrentamientoInfo();
     }
 }

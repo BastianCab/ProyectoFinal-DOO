@@ -4,7 +4,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Calculadora de Eliminatorias dobles
+ * es un esqueleto que asocia partes enteros
+ * a los jugadores
+ */
 public class CalcularDobles implements CalcularJuego {
+    /**
+     * Se crean dos arrays dobles para representar el progreso de
+     * en el torneo, tanto en los Winners como Loosers
+     */
     int[][] partido = new int[100][20];
     int[][] partidoPerdedores = new int[100][20];
     int participante1;
@@ -13,6 +22,12 @@ public class CalcularDobles implements CalcularJuego {
     private boolean Perdedores = false;
     private int buffer = 0;
 
+    /**
+     * Hay tres flags que indican el progreso del torneo
+     * cuando termina ganadores
+     * cuando termina perdedores
+     * cuando termina el torneo
+     */
     private boolean endW = false;
     private boolean endL = false;
     private boolean end = false;
@@ -20,9 +35,11 @@ public class CalcularDobles implements CalcularJuego {
     private int partidoAct = 0;
     private int rondaAct;
 
-    public CalcularDobles() {
-    }
-
+    /**
+     * Metodo que indica el llamar enfrentamiento
+     * @param Resultado entre que gana participante 1 o 2
+     * @throws ErroresCalculo si hay errores al ejecutar
+     */
     @Override
     public void enfrentar(int Resultado) throws ErroresCalculo {
         if (Resultado != 1 && Resultado !=0){
@@ -67,6 +84,10 @@ public class CalcularDobles implements CalcularJuego {
         }
     }
 
+    /**
+     * Se inicia la forma del torneo despues de ser creado
+     * @param jugadores cantidad de jugadores en el torneo
+     */
     @Override
     public void empezar(int jugadores) {
         for (int i=0;i<jugadores;i++){ //placeholder
@@ -74,6 +95,9 @@ public class CalcularDobles implements CalcularJuego {
         }
     }
 
+    /**
+     * Se ocupa para avanzar en el torneo
+     */
     @Override
     public void siguiente() {
         if (end) {
@@ -121,12 +145,25 @@ public class CalcularDobles implements CalcularJuego {
         }
     }
 
+    /**
+     * Crea la lista de enfrentamientos asociada al esqueleto creado
+     * @param competidores
+     * @return Lista de enfrentamientos
+     * @throws DatoInvalidoException
+     */
     @Override
     public List<Enfrentamiento> calcularEnfrentamientos(List<Participante> competidores) throws DatoInvalidoException {
         List<Enfrentamiento> partidos = new ArrayList<>();
         Collections.shuffle(competidores);
 
-        for (int i = 0; i < competidores.size(); i += 2) {
+        int c = 0;
+        for (int i = 0; i < EnfrentamientosInfo.size(); i++) {
+            Enfrentamiento A = new Enfrentamiento(competidores.get((EnfrentamientosInfo.get(i))[0]-1),competidores.get((EnfrentamientosInfo.get(i))[1]-1));
+            A.setResultado(EnfrentamientosInfo.get(i)[2]);
+            partidos.add(A);
+            c++;
+        }
+        for (int i = 0+c; i < competidores.size(); i += 2) {
             Participante p1 = competidores.get(i);
             Participante p2 = (i + 1 < competidores.size()) ? competidores.get(i + 1) : new Participante(null, "Por definir", "-", "-");
             partidos.add(new Enfrentamiento(p1, p2));
@@ -134,20 +171,25 @@ public class CalcularDobles implements CalcularJuego {
 
         int partidosRondaPerdedores = competidores.size() - 1;
 
-        for (int i = 0; i < partidosRondaPerdedores; i++) {
+        for (int i = 0+c; i < partidosRondaPerdedores; i++) {
             Participante tbd = new Participante(null, "Por definir", "-", "-");
             partidos.add(new Enfrentamiento(tbd, tbd));
         }
 
         return partidos;
     }
+
+    @Override
+    public boolean getEnd() {
+        return end;
+    }
+
+    /**
+     * getter que da los participantes actuales
+     * @return
+     */
     @Override
     public int[] getParticipantes() {
         return new int[]{participante1,participante2};
-    }
-
-    @Override
-    public int getTipo() {
-        return 1;
     }
 }

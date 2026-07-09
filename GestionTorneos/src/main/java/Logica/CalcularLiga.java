@@ -4,14 +4,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * por temas de tiempo no se pudo agregar una logica
+ * para el formato de liga
+ */
 public class CalcularLiga implements CalcularJuego{
 
     public CalcularLiga() {
-    }
-
-    @Override
-    public int getTipo(){
-        return 3;
     }
 
     @Override
@@ -29,13 +28,13 @@ public class CalcularLiga implements CalcularJuego{
     }
 
     @Override
-    public int[] getParticipantes() {
-        return new int[0];
+    public boolean getEnd() {
+        return false;
     }
 
     @Override
-    public int getCompetidores() {
-        return 666;
+    public int[] getParticipantes() {
+        return new int[0];
     }
 
     @Override

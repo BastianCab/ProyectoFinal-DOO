@@ -26,6 +26,8 @@ El siguiente diagrama ilustra las funcionalidades del sistema y las interaccione
 ![Crear Torneo paso 1](https://github.com/BastianCab/ProyectoFinal-DOO/blob/main/paso3.png)
 ![Crear Torneo paso 1](https://github.com/BastianCab/ProyectoFinal-DOO/blob/main/paso4.png)
 ![Espectar Torneo](https://github.com/BastianCab/ProyectoFinal-DOO/blob/main/paso5.png)
+![Crear Torneo paso 1](https://github.com/BastianCab/ProyectoFinal-DOO/blob/main/EleguirGanador.png)
+![Espectar Torneo](https://github.com/BastianCab/ProyectoFinal-DOO/blob/main/TorneoEspectar.png)
 --
 ## 5. Diagrama UML
 --
@@ -47,6 +49,9 @@ El siguiente diagrama ilustra las funcionalidades del sistema y las interaccione
     * `GUI.PanelPrincipal` (Cliente)
     * `GUI.ClickBotonesPanelPrincipal` (Cliente)
     * `GUI.PanelCrearTorneoMaster` (Cliente)
+    * `GUI.ClickBotonesMod` (Cliente)
+    * `GUI.PanelMod` (Cliente)'
+    * `GUI.PanelModEspectarTorneo` (Cliente)'
     * `GUI.PanelCrearTorneoConfiguracionBasica` (Cliente)
     * `GUI.PanelCrearTorneoInscripcion` (Cliente)
     * `GUI.PanelCrearTorneoFechas` (Cliente)

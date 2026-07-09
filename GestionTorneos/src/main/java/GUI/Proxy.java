@@ -58,7 +58,7 @@ public class Proxy {
         CalcularJuego estrategia = null;
         switch (tipoTorneo) {
             case LIGA_SIMPLE:
-                estrategia = new CalcularLiga();
+                estrategia = new CalcularSimple();
                 break;
             case ELIMINACION_DIRECTA:
                 estrategia = new CalcularSimple();

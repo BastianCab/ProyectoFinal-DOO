@@ -39,9 +39,10 @@ public class Enfrentamiento {
      */
     public void setResultado(int resultado) throws DatoInvalidoException {
         if (resultado != 1 && resultado != 2) {
-            throw new DatoInvalidoException("El tipo de resultado debe ser 1 o 2");
+            this.resultado = resultado;
+        } else {
+            this.resultado = 0;
         }
-        this.resultado = resultado;
     }
 
     /**

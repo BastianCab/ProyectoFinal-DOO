@@ -1,5 +1,6 @@
 package GUI;
 
+import Logica.DatoInvalidoException;
 import Logica.Enfrentamiento;
 import Logica.Torneo;
 
@@ -53,7 +54,13 @@ public class PanelEspectarTorneo extends JPanel {
         btnActualizar.setPreferredSize(new Dimension(200, 35));
 
         // Al hacer clic, le pedimos al sistema que lea los partidos
-        btnActualizar.addActionListener(e -> cargarDatos());
+        btnActualizar.addActionListener(e -> {
+            try {
+                cargarDatos();
+            } catch (DatoInvalidoException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
 
         panelBtnCenter.add(btnActualizar);
         panelHeader.add(panelBtnCenter);
@@ -89,7 +96,7 @@ public class PanelEspectarTorneo extends JPanel {
      * Formatea la fecha (LocalDateTime) para mostrarla de manera amigable al usuario.
      * Si no hay torneos o partidos, actualiza los textos para informar al espectador.
      */
-    public void cargarDatos() {
+    public void cargarDatos() throws DatoInvalidoException {
         Torneo torneo = proxy.getTorneo();
         panelPartidos.removeAll(); // Limpiamos la pantalla antes de dibujar
 
@@ -97,7 +104,7 @@ public class PanelEspectarTorneo extends JPanel {
             lblTituloTorneo.setText("No hay ningún torneo activo en este momento.");
         } else {
             lblTituloTorneo.setText("Torneo: " + torneo.getNombre() + " (" + torneo.getDisciplina() + ")");
-            List<Enfrentamiento> partidos = torneo.getEnfrentamientos();
+            List<Enfrentamiento> partidos = proxy.torneo.getEstrategia().calcularEnfrentamientos(proxy.getTorneo().getCompetidores());
 
             if (partidos == null || partidos.isEmpty()) {
                 panelPartidos.add(new JLabel("El calendario de partidos aún no ha sido generado."));
@@ -113,12 +120,11 @@ public class PanelEspectarTorneo extends JPanel {
                     carta.setBorder(BorderFactory.createTitledBorder("Partido " + (i + 1)));
                     carta.setBackground(new Color(245, 245, 245));
                     carta.setMaximumSize(new Dimension(800, 70));
-
                     String txtPartido = p.getCompetidor1().getNombre() + " VS " + p.getCompetidor2().getNombre();
                     JLabel lblCruce = new JLabel(txtPartido, SwingConstants.CENTER);
                     lblCruce.setFont(new Font("Arial", Font.BOLD, 14));
 
-                    String txtFecha = (p.getFechaHora() != null) ? p.getFechaHora().format(formatter) : "Fecha por definir";
+                    String txtFecha = (p.getFechaHora() != null) ? p.getFechaHora().format(formatter) : " ";
                     JLabel lblDetalle = new JLabel("Fecha: " + txtFecha, SwingConstants.CENTER);
 
                     carta.add(lblCruce);
