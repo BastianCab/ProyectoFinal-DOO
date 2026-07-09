@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84c50cba-9721-4702-a204-1353f6b09a0f" name="Changes" comment="Adaptar codigo de calcularJuego para tener mejor compatibilidad con GUI">
-      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularSimple.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularSimple.java" afterDir="false" />
+    <list default="true" id="84c50cba-9721-4702-a204-1353f6b09a0f" name="Changes" comment="Recibir pull">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,62 +159,41 @@
       <option name="project" value="LOCAL" />
       <updated>1783555552286</updated>
     </task>
-    <task id="LOCAL-00004" summary="Arrglar merge">
-      <option name="closed" value="true" />
-      <created>1783558280798</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1783558280798</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Adaptar codigo de calcularJuego para tener mejor compatibilidad con GUI">
-      <option name="closed" value="true" />
-      <created>1783562685990</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1783562685990</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Eliminar Archivos Placeholder" />
     <MESSAGE value="Resolver merge" />
     <MESSAGE value="Arrglar merge" />
-    <MESSAGE value="Adaptar codigo de calcularJuego para tener mejor compatibilidad con GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adaptar codigo de calcularJuego para tener mejor compatibilidad con GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Arrglar merge" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/GestionTorneos/src/test/java/Logica/CalcularSimpleTest.java</url>
-          <line>14</line>
+          <line>13</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularSimple.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularDobles.java</url>
-          <line>106</line>
+          <line>102</line>
           <option name="timeStamp" value="58" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularDobles.java</url>
-          <line>26</line>
-          <properties class="Logica.CalcularDobles" method="enfrentar">
+          <url>file://$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularSimple.java</url>
+          <line>36</line>
+          <properties class="Logica.CalcularSimple" method="siguiente">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="90" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularDobles.java</url>
-          <line>70</line>
-          <properties class="Logica.CalcularDobles" method="empezar">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="91" />
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
