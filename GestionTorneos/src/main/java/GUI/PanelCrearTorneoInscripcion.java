@@ -181,7 +181,7 @@ public class PanelCrearTorneoInscripcion extends JPanel {
                 // Actualización de la interfaz y envío de datos al backend
                 modeloLista.addElement(nombre + " | " + correo + " | " + telefono);
                 try {
-                    proxy.inscribirParticipante(nombre, tipoActual);
+                    proxy.inscribirParticipante(nombre, correo, telefono, tipoActual);
                 } catch (DatoInvalidoException m) {
                     System.out.println("[PROXY] El participante no puede ser nulo");
                 }
