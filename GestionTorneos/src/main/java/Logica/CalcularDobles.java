@@ -123,14 +123,14 @@ public class CalcularDobles implements CalcularJuego {
 
         for (int i = 0; i < competidores.size(); i += 2) {
             Participante p1 = competidores.get(i);
-            Participante p2 = (i + 1 < competidores.size()) ? competidores.get(i + 1) : new Participante(null, "Por definir", "-", "-");
+            Participante p2 = (i + 1 < competidores.size()) ? competidores.get(i + 1) : new Participante(null, "Por definir");
             partidos.add(new Enfrentamiento(p1, p2));
         }
 
         int partidosRondaPerdedores = competidores.size() - 1;
 
         for (int i = 0; i < partidosRondaPerdedores; i++) {
-            Participante tbd = new Participante(null, "Por definir", "-", "-");
+            Participante tbd = new Participante(null, "Por definir");
             partidos.add(new Enfrentamiento(tbd, tbd));
         }
 

@@ -67,14 +67,14 @@ public class CalcularSimple implements CalcularJuego{
         // 1. CREAMOS LA PRIMERA RONDA (Partidos reales)
         for (int i = 0; i < competidores.size(); i += 2) {
             Participante p1 = competidores.get(i);
-            Participante p2 = (i + 1 < competidores.size()) ? competidores.get(i + 1) : new Participante(null, "Por definir", null, null);
+            Participante p2 = (i + 1 < competidores.size()) ? competidores.get(i + 1) : new Participante(null, "Por definir");
             partidos.add(new Enfrentamiento(p1, p2));
         }
 
         int partidosFaltantes = (competidores.size() / 2) - 1;
         for (int i = 0; i < partidosFaltantes; i++) {
-            Participante fantasma1 = new Participante(null, "Por definir", "-", "-");
-            Participante fantasma2 = new Participante(null, "Por definir", "-", "-");
+            Participante fantasma1 = new Participante(null, "Por definir");
+            Participante fantasma2 = new Participante(null, "Por definir");
 
             partidos.add(new Enfrentamiento(fantasma1, fantasma2));
         }
