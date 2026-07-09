@@ -14,12 +14,17 @@ public class CalcularSimple implements CalcularJuego{
 
     private boolean end = false;
 
-    public CalcularSimple(int jugadores) {
+    public CalcularSimple() {
+    }
+
+    @Override
+    public void empezar(int jugadores) {
         for (int i=0;i<jugadores;i++){ //placeholder
             partido[i][0] = i+1;
         }
     }
 
+    @Override
     public void enfrentar(int Resultado) throws ErroresCalculo {
         if (Resultado == 0){
             partido[partidoAct][rondaAct+1]=participante1;
@@ -29,7 +34,7 @@ public class CalcularSimple implements CalcularJuego{
             throw new ErroresCalculo("Valor de ganador no valido [entre 1 y 0]");
         }
         if(participante1!=0 && participante2!=0) {
-            guardarEnfrentamientoPH(participante1, participante2, Resultado, "", rondaAct); //PH guardar info
+            guardarEnfrentamientoInfo(participante1, participante2, Resultado);
         }
         partidoAct++;
     }
@@ -73,10 +78,12 @@ public class CalcularSimple implements CalcularJuego{
 
         int partidosFaltantes = (competidores.size() / 2) - 1;
         for (int i = 0; i < partidosFaltantes; i++) {
-            Participante fantasma1 = new Participante(null, "Por definir", "-", "-");
-            Participante fantasma2 = new Participante(null, "Por definir", "-", "-");
 
-            partidos.add(new Enfrentamiento(fantasma1, fantasma2));
+            Participante fantasma1 = competidores.get((EnfrentamientosInfo.get(i))[0]);
+            Participante fantasma2 = competidores.get((EnfrentamientosInfo.get(i))[1]);
+            Enfrentamiento A = new Enfrentamiento(fantasma1, fantasma2);
+            A.setResultado(EnfrentamientosInfo.get(i)[2]);
+            partidos.add(A);
         }
 
         return partidos;

@@ -20,10 +20,7 @@ public class CalcularDobles implements CalcularJuego {
     private int partidoAct = 0;
     private int rondaAct;
 
-    public CalcularDobles(int jugadores) {
-        for (int i=0;i<jugadores;i++){ //placeholder
-            partido[i][0] = i+1;
-        }
+    public CalcularDobles() {
     }
 
     @Override
@@ -40,7 +37,7 @@ public class CalcularDobles implements CalcularJuego {
             Perdedores = false;
             end = true;
             if(participante1!=0 && participante2!=0) {
-                guardarEnfrentamientoPH(participante1, participante2, Resultado, " Y Gano la copa!!", rondaAct); //debug
+                guardarEnfrentamientoInfo(participante1, participante2, Resultado); //debug
             }
         } else if (Perdedores == false) {
             if (endW && end == false) {
@@ -53,7 +50,7 @@ public class CalcularDobles implements CalcularJuego {
                 partidoPerdedores[partidoAct + buffer][rondaAct] = participante1;
             }
             if(participante1!=0 && participante2!=0) {
-                guardarEnfrentamientoPH(participante1, participante2, Resultado, " En Ganadores",rondaAct); //debug
+                guardarEnfrentamientoInfo(participante1, participante2, Resultado); //debug
             }
             partidoAct++;
         } else {
@@ -64,9 +61,16 @@ public class CalcularDobles implements CalcularJuego {
             } else if (Resultado == 1) {
                 partidoPerdedores[partidoAct][rondaAct + 1] = participante2;
             }
-            guardarEnfrentamientoPH(participante1,participante2,Resultado," En Perdedores",rondaAct); //debug
+            guardarEnfrentamientoInfo(participante1,participante2,Resultado); //debug
             partidoAct++;
             buffer++;
+        }
+    }
+
+    @Override
+    public void empezar(int jugadores) {
+        for (int i=0;i<jugadores;i++){ //placeholder
+            partido[i][0] = i+1;
         }
     }
 
@@ -116,6 +120,7 @@ public class CalcularDobles implements CalcularJuego {
             }
         }
     }
+
     @Override
     public List<Enfrentamiento> calcularEnfrentamientos(List<Participante> competidores) {
         List<Enfrentamiento> partidos = new ArrayList<>();

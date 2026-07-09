@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface CalcularJuego {
-    ArrayList<String> EnfrentamientosPH = new ArrayList<>();
+    public ArrayList<int[]> EnfrentamientosInfo = new ArrayList<int[]>();
+
+    public void empezar(int i);
 
     public void siguiente();
 
@@ -31,17 +33,13 @@ public interface CalcularJuego {
 
     public int getTipo();
 
-    public default void guardarEnfrentamientoPH(int a, int b, int c,String d,int f){
-        if (c==0){
-            EnfrentamientosPH.add("Jugador "+String.valueOf(a)+" Gano a Jugador "+String.valueOf(b)+" , En la ronda: "+String.valueOf(f+1)+ " "+ d);
-        } else {
-            EnfrentamientosPH.add("Jugador "+String.valueOf(b)+" Gano a Jugador "+String.valueOf(a)+" , En la ronda: "+String.valueOf(f+1)+ " "+ d);
-        }
-
+    public default void guardarEnfrentamientoInfo(int a, int b, int c){
+        int[] Info = {a,b,c};
+        EnfrentamientosInfo.add(Info);
     }
 
-    public default ArrayList<String> getEnfrentamientosPH(){
-        return EnfrentamientosPH;
+    public default ArrayList<int[]> getEnfrentamientoInfo(){
+        return EnfrentamientosInfo;
     }
 
     public List<Enfrentamiento> calcularEnfrentamientos(List<Participante> cometidores);

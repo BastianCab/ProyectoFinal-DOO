@@ -6,7 +6,7 @@ import java.util.List;
 
 public class CalcularLiga implements CalcularJuego{
 
-    public CalcularLiga(int i) {
+    public CalcularLiga() {
     }
 
     @Override
@@ -32,6 +32,12 @@ public class CalcularLiga implements CalcularJuego{
     public int getCompetidores() {
         return 666;
     }
+
+    @Override
+    public void empezar(int i) {
+
+    }
+
     @Override
     public void siguiente() {
 

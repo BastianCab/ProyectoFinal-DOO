@@ -10,11 +10,12 @@ import static org.junit.jupiter.api.Assertions.*;
 class CalcularSimpleTest {
     @Test
     void intentarCalulo () throws ErroresCalculo {
-        CalcularSimple bab = new CalcularSimple(30);
+        CalcularSimple bab = new CalcularSimple();
+        bab.empezar(10);
         for (int i = 0; i < 10; i++) {
             bab.siguiente();
             bab.enfrentar(1);
         }
-        ArrayList<String> a = bab.getEnfrentamientosPH();
+        ArrayList<int[]> a = bab.getEnfrentamientoInfo();
     }
 }
