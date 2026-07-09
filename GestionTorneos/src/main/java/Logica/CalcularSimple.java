@@ -90,7 +90,7 @@ public class CalcularSimple implements CalcularJuego{
     }
     */
     @Override
-    public List<Enfrentamiento> calcularEnfrentamientos(List<Participante> competidores) {
+    public List<Enfrentamiento> calcularEnfrentamientos(List<Participante> competidores) throws DatoInvalidoException {
         List<Enfrentamiento> partidos = new ArrayList<>();
         Collections.shuffle(competidores);
 

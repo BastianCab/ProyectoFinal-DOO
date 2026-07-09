@@ -42,6 +42,6 @@ public interface CalcularJuego {
         return EnfrentamientosInfo;
     }
 
-    public List<Enfrentamiento> calcularEnfrentamientos(List<Participante> cometidores);
+    public List<Enfrentamiento> calcularEnfrentamientos(List<Participante> cometidores) throws DatoInvalidoException;
 
 }

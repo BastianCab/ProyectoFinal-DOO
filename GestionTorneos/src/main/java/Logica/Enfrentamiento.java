@@ -18,7 +18,13 @@ public class Enfrentamiento {
      * @param Competidor1 el primer participante
      * @param Competidor2 el segundo participante
      */
-    public Enfrentamiento(Participante Competidor1, Participante Competidor2) {
+    public Enfrentamiento(Participante Competidor1, Participante Competidor2) throws DatoInvalidoException {
+        if (Competidor1 == null) {
+            throw new DatoInvalidoException("El competidor 1 no puede ser nulo");
+        }
+        if (Competidor2 == null) {
+            throw new DatoInvalidoException("El competidor 2 no puede ser nulo");
+        }
         this.fechaHora = null;
         this.Competidor1 = Competidor1;
         this.Competidor2 = Competidor2;
@@ -37,7 +43,10 @@ public class Enfrentamiento {
      * @param resultado el resultado del enfrentamiento, 1 si ganó el primer participante,
      *                  2 si ganó el segundo participante
      */
-    public void setResultado(int resultado) {
+    public void setResultado(int resultado) throws DatoInvalidoException {
+        if (resultado != 1 && resultado != 2) {
+            throw new DatoInvalidoException("El tipo de resultado debe ser 1 o 2");
+        }
         this.resultado = resultado;
     }
 
@@ -53,7 +62,10 @@ public class Enfrentamiento {
      * Setter de la fecha y hora del enfrentamiento
      * @param fechaHora la fecha y hora a la cual se realizará el enfrentamiento
      */
-    public void setFechaHora(LocalDateTime fechaHora) {
+    public void setFechaHora(LocalDateTime fechaHora) throws DatoInvalidoException {
+        if (fechaHora == null) {
+            throw new DatoInvalidoException("La fecha y hora del enfrentamiento no puede ser nula");
+        }
         this.fechaHora = fechaHora;
     }
 
@@ -69,7 +81,10 @@ public class Enfrentamiento {
      * Setter del primer participante
      * @param Competidor1 el participante al cual se quiere cambiar
      */
-    public void setCompetidor1(Participante Competidor1) {
+    public void setCompetidor1(Participante Competidor1) throws DatoInvalidoException {
+        if (Competidor1 == null) {
+            throw new DatoInvalidoException("El competidor 1 no puede ser nulo");
+        }
         this.Competidor1 = Competidor1;
     }
 
@@ -85,7 +100,10 @@ public class Enfrentamiento {
      * Setter del segundo participante
      * @param Competidor2 el participante al cual se quiere cambiar
      */
-    public void setCompetidor2(Participante Competidor2) {
+    public void setCompetidor2(Participante Competidor2) throws DatoInvalidoException {
+        if (Competidor2 == null) {
+            throw new DatoInvalidoException("El competidor 2 no puede ser nulo");
+        }
         this.Competidor2 = Competidor2;
     }
 
@@ -99,7 +117,7 @@ public class Enfrentamiento {
                     Competidor1.getNombre();
         }
         return "Enfrentamiento: " + Competidor1.getNombre() + " vs " +
-                Competidor2.getNombre() + "\n" + "El " + fechaHora.toLocalDate()
+                Competidor2.getNombre() + "\nEl " + fechaHora.toLocalDate()
                 + " a las " + fechaHora.toLocalTime();
     }
 }
