@@ -1,5 +1,6 @@
 package GUI;
 
+import Logica.DatoInvalidoException;
 import Logica.Enfrentamiento;
 import javax.swing.*;
 import java.awt.*;
@@ -73,6 +74,7 @@ public class PanelCrearTorneoFechas extends JPanel{
 
         btnFinalizar = new JButton("Crear Torneo");
         btnFinalizar.setBounds(390, 410, 140, 40);
+        btnFinalizar.setBackground(Color.LIGHT_GRAY);
         panelFormulario.add(btnFinalizar);
 
         ClickBotonesPanelCrearTorneoFechas controlador = new ClickBotonesPanelCrearTorneoFechas();
@@ -175,7 +177,11 @@ public class PanelCrearTorneoFechas extends JPanel{
                 }
 
                 // Todas las fechas son válidas, se envían al Proxy
-                proxy.guardarFechasEnfrentamientos(fechasModernas);
+                try {
+                    proxy.guardarFechasEnfrentamientos(fechasModernas);
+                } catch (DatoInvalidoException m) {
+                    System.out.println("[PROXY] La fecha del enfrentamineto no puede ser nula");
+                }
 
                 JOptionPane.showMessageDialog(null,
                         "¡El torneo y su calendario de fechas han sido creados con éxito!",

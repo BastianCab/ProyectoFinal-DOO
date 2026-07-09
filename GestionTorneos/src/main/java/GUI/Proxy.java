@@ -35,22 +35,21 @@ public class Proxy {
      * @param tipoParticipante La modalidad del torneo (ej. EQUIPO o INDIVIDUAL).
      * @param tipoTorneo El formato estructural del torneo (ej. LIGA_SIMPLE, ELIMINACION_DIRECTA).
      */
-    public void crearTorneo(String nombreOrganizador, String nombre, String disciplina, TipoParticipante tipoParticipante, TipoTorneoEnum tipoTorneo) {
+    public void crearTorneo(String nombreOrganizador, String nombre, String disciplina,
+                            TipoParticipante tipoParticipante,
+                            TipoTorneoEnum tipoTorneo) throws DatoInvalidoException{
 
         // --- BARRERAS DE SEGURIDAD ---
         if (nombreOrganizador == null || nombreOrganizador.trim().isEmpty()) {
-            System.out.println("[ERROR PROXY] El nombre del organizador no puede estar vacío.");
-            return;
+            throw new DatoInvalidoException("[PROXY] El nombre del organizador no puede estar vacío.");
         }
 
         if (nombre == null || nombre.trim().isEmpty()) {
-            System.out.println("[ERROR PROXY] El nombre del torneo no puede estar vacío.");
-            return;
+            throw new DatoInvalidoException("[PROXY] El nombre del torneo no puede estar vacío.");
         }
 
         if (disciplina == null || disciplina.trim().isEmpty()) {
-            System.out.println("[ERROR PROXY] La disciplina no puede estar vacía.");
-            return;
+            throw new DatoInvalidoException("[PROXY] La disciplina no puede estar vacía.");
         }
 
 
@@ -67,10 +66,13 @@ public class Proxy {
             case ELIMINACION_DOBLE:
                 estrategia = new CalcularDobles();
                 break;
+            default:
+                throw new DatoInvalidoException("[PROXY] El tipo de torneo no puede estar vacío o ser nulo.");
         }
 
         // --- INSTANCIACIÓN FINAL ---
-        this.torneo = new Torneo(nombreOrganizador, nombre, disciplina, tipoParticipante, tipoTorneo, estrategia);
+        this.torneo = new Torneo(nombreOrganizador, nombre, disciplina, tipoParticipante,
+            tipoTorneo, estrategia);
 
 
 
@@ -85,41 +87,30 @@ public class Proxy {
 
     /**
      * Recibe los datos de contacto desde la interfaz de inscripciones (Paso 2),
-     * valida que no existan campos vacíos, crea la entidad Participante y
+     * válida que no existan campos vacíos, crea la entidad Participante y
      * la agrega a la lista oficial del torneo activo.
-     * @param nombre Nombre del jugador o del equipo.
-     * @param correo Dirección de correo electrónico de contacto.
-     * @param numeroTelefonico Número de teléfono de contacto.
-     * @param tipoParticipante Modalidad correspondiente al torneo actual.
+     * @param nombre nombre del jugador o del equipo.
+     * @param correo el correo de contacto del jugador
+     * @param telefono el telefono de contacto del jugador
+     * @param tipoParticipante tipoParticipante Modalidad correspondiente al torneo actual.
+     * @throws DatoInvalidoException
      */
-    public void inscribirParticipante(String nombre, String correo, String numeroTelefonico, TipoParticipante tipoParticipante){
+    public void inscribirParticipante(String nombre, String correo, String telefono, TipoParticipante tipoParticipante) throws DatoInvalidoException{
 
         // --- BARRERAS DE SEGURIDAD ---
         if (nombre == null || nombre.trim().isEmpty()) {
-            System.out.println("[ERROR PROXY] El nombre no puede estar vacío.");
-            return;
-        }
-
-        if (correo == null || correo.trim().isEmpty()) {
-            System.out.println("[ERROR PROXY] El correo no puede estar vacío.");
-            return;
-        }
-
-        if (numeroTelefonico == null || numeroTelefonico.trim().isEmpty()) {
-            System.out.println("[ERROR PROXY] El número de teléfono no puede estar vacío.");
+            System.out.println("[PROXY] El nombre no puede estar vacío.");
             return;
         }
 
         // --- INSTANCIACIÓN E INSCRIPCIÓN ---
-        this.participante = new Participante(tipoParticipante, nombre, correo, numeroTelefonico);
+        this.participante = new Participante(tipoParticipante, nombre, correo, telefono);
         this.torneo.inscribirParticipante(participante);
 
         // Visualización temporal para la consola
         System.out.println("[PROXY LOG] ¡Participante agregado con éxito al torneo!");
         System.out.println("  -> Tipo: " + this.participante.getTipo());
         System.out.println("  -> Nombre: " + this.participante.getNombre());
-        System.out.println("  -> Correo: " + this.participante.getCorreo());
-        System.out.println("  -> Número de teléfono: " + this.participante.getNumeroTelefonico());
 
         // Limpiamos la variable temporal por seguridad
         this.participante = null;
@@ -139,9 +130,9 @@ public class Proxy {
     /**
      * Recibe el listado de fechas validadas desde la interfaz (Paso 3) y se las asigna
      * secuencialmente a los partidos que ya se encuentran guardados en la memoria del torneo.
-     * @param fechasElegidas Lista de fechas modernas (LocalDateTime) elegidas por el organizador.
+     * @param fechasElegidas Lista de fechas elegidas por el organizador.
      */
-    public void guardarFechasEnfrentamientos(List<LocalDateTime> fechasElegidas) {
+    public void guardarFechasEnfrentamientos(List<LocalDateTime> fechasElegidas) throws DatoInvalidoException {
 
         // Rescatamos los partidos que ya fueron calculados por el Strategy
         List<Enfrentamiento> partidos = this.torneo.getEnfrentamientos();
@@ -151,7 +142,7 @@ public class Proxy {
             partidos.get(i).setFechaHora(fechasElegidas.get(i));
         }
 
-        System.out.println("[PROXY LOG] Fechas (LocalDateTime) asignadas correctamente.");
+        System.out.println("[PROXY] Fechas asignadas correctamente.");
     }
 
     /**

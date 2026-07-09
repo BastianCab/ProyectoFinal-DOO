@@ -1,5 +1,6 @@
 package GUI;
 
+import Logica.DatoInvalidoException;
 import Logica.TipoTorneoEnum;
 import Logica.TipoParticipante;
 import javax.swing.*;
@@ -43,7 +44,7 @@ public class PanelCrearTorneoConfiguracionBasica extends JPanel {
         panelFormulario.setPreferredSize(new Dimension(550, 480));
         panelFormulario.setBackground(Color.WHITE);
 
-        JLabel lblTitulo = new JLabel("Paso 1: Configuración Básica");
+        JLabel lblTitulo = new JLabel("Paso 1: Configuración Básica", SwingConstants.CENTER);
         lblTitulo.setFont(new Font("Arial", Font.BOLD, 24));
         lblTitulo.setBounds(20, 10, 550, 40);
         panelFormulario.add(lblTitulo);
@@ -163,7 +164,12 @@ public class PanelCrearTorneoConfiguracionBasica extends JPanel {
                 return;
             }
 
-            proxy.crearTorneo(organizador, torneo, disciplina, tipoParticipante, formato);
+            try {
+                proxy.crearTorneo(organizador, torneo, disciplina, tipoParticipante, formato);
+            } catch (DatoInvalidoException l) {
+                System.out.println("El proxy no se creó correctamente");
+            }
+
             panelMaster.irAPaso2(tipoParticipante);
         }
     }

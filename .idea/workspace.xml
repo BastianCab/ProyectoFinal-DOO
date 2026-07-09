@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84c50cba-9721-4702-a204-1353f6b09a0f" name="Changes" comment="Recibir pull">
-      <change afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/ClickBotonesMod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/PanelCrearTorneoMaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/PanelCrearTorneoMaster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/PanelMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/PanelMod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/Ventana.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/Ventana.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularDobles.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularDobles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularJuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularJuego.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularLiga.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularLiga.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularSimple.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularSimple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/Torneo.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/Torneo.java" afterDir="false" />
-    </list>
+    <list default="true" id="84c50cba-9721-4702-a204-1353f6b09a0f" name="Changes" comment="Recibir pull" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +21,19 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="RicardoP1" />
@@ -64,7 +66,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.main.executor": "Debug",
+    "Application.main.executor": "Run",
     "JUnit.CalcularDoblesTest.executor": "Run",
     "JUnit.CalcularSimpleTest.executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
@@ -78,7 +80,7 @@
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.general"
+    "settings.editor.selected.configurable": "vcs.Git"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -181,22 +183,27 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/GestionTorneos/src/test/java/Logica/CalcularSimpleTest.java</url>
-          <line>13</line>
+          <line>14</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularSimple.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularDobles.java</url>
-          <line>102</line>
+          <line>106</line>
           <option name="timeStamp" value="58" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/ClickBotonesMod.java</url>
-          <line>21</line>
-          <properties class="GUI.ClickBotonesMod" method="actionPerformed">
+          <url>file://$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularSimple.java</url>
+          <line>41</line>
+          <properties class="Logica.CalcularSimple" method="siguiente">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="113" />
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -216,10 +223,6 @@
         <watch expression="partido[partidoAct*2]" language="JAVA" />
         <watch expression="partido" language="JAVA" />
         <watch expression="partido" language="JAVA" />
-      </configuration>
-      <configuration name="Application">
-        <watch expression="proxy.torneo.enfrentamientos" />
-        <watch expression="proxy.torneo.enfrentamientos" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>

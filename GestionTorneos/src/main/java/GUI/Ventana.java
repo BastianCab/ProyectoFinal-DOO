@@ -40,10 +40,7 @@ public class Ventana extends JFrame {
         JPanel panelModificar = new PanelMod(proxyGlobal);
 
         // 4. Módulo de Visualización (En construcción)
-        JPanel panelEspectar = new JPanel();
-        panelEspectar.setBackground(Color.LIGHT_GRAY);
-        panelEspectar.setLayout(new GridBagLayout());
-        panelEspectar.add(new JLabel("PANTALLA: ESPECTAR TORNEO (BRACKET)"));
+        JPanel panelEspectar = new PanelEspectarTorneo(proxyGlobal, panelContenedor, cardLayout);
 
         // --- REGISTRO DE LAS PANTALLAS EN EL MAZO PRINCIPAL ---
         panelContenedor.add(panelMenu, "PANTALLA_MENU");

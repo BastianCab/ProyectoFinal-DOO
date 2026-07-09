@@ -9,45 +9,66 @@ public class Participante {
     TipoParticipante tipo;
     String nombre;
     String correo;
-    String numeroTelefonico;
+    String telefono;
 
     /**
      * Constructor principal de la clase Participante.
      * Inicializa un nuevo competidor (ya sea un jugador individual o un equipo)
-     * registrando su modalidad y su información de contacto básica para el torneo.
-     * @param tipo             La modalidad del participante obtenida del enumerador (Ej. PERSONA o EQUIPO).
-     * @param nombre           El nombre completo del jugador o el nombre oficial del equipo.
-     * @param correo           La dirección de correo electrónico para el envío de notificaciones.
-     * @param numeroTelefonico El número de teléfono de contacto del participante o su representante.
+     * registrando su modalidad.
+     *
+     * @param tipo   La modalidad del participante obtenida del enumerador (Ej. PERSONA o EQUIPO).
+     * @param nombre El nombre completo del jugador o el nombre oficial del equipo.
      */
-    public Participante(TipoParticipante tipo, String nombre, String correo, String numeroTelefonico){
+    public Participante(TipoParticipante tipo, String nombre, String correo, String telefono) throws DatoInvalidoException {
+        if (nombre.isBlank() || nombre == null) {
+            throw new DatoInvalidoException("El nombre del participante no puede ser nulo o vacío");
+        }
+
+        if (correo.isBlank() || correo == null) {
+            throw new DatoInvalidoException("El correo no puede estar vacío o nulo");
+        }
+
+        if (telefono.isBlank() || telefono == null) {
+            throw new DatoInvalidoException("El telefono no puede estar vacío o nulo");
+        }
+
         this.tipo = tipo;
         this.nombre = nombre;
+        this.telefono = telefono;
         this.correo = correo;
-        this.numeroTelefonico = numeroTelefonico;
+    }
+
+    /**
+     * Getter del correo del participante
+     * @return El correo de contacto del participante
+     */
+    public String getCorreo() {
+        return correo;
+    }
+
+    /**
+     * Getter del número telefónico del participante
+      * @return el número telefónico del participante
+     */
+    public String getTelefono() {
+        return telefono;
     }
 
     /**
      * Getter del tipo de participante
-     * @return devuelve si el participantes es una persona o un equipo
+     * @return devuelve si el participante es una persona o un equipo
      */
-    public TipoParticipante getTipo(){return this.tipo; };
+    public TipoParticipante getTipo() {
+        return this.tipo;
+    }
+
+    ;
 
     /**
      * Getter del nombre del participante
      * @return el nombre del participante
      */
-    public String getNombre(){ return this.nombre; };
-
-    /**
-     * Getter del correo del participante
-     * @return el correo del participante
-     */
-    public String getCorreo(){ return this.correo; };
-
-    /**
-     * Getter del numero de telefono del participante
-     * @return el numero de telefono del participante
-     */
-    public String getNumeroTelefonico(){ return this.numeroTelefonico; }
+    public String getNombre() {
+        return this.nombre;
+    }
 }

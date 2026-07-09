@@ -1,5 +1,6 @@
 package GUI;
 
+import Logica.DatoInvalidoException;
 import Logica.TipoParticipante;
 import javax.swing.*;
 import java.awt.*;
@@ -179,7 +180,11 @@ public class PanelCrearTorneoInscripcion extends JPanel {
 
                 // Actualización de la interfaz y envío de datos al backend
                 modeloLista.addElement(nombre + " | " + correo + " | " + telefono);
-                proxy.inscribirParticipante(nombre, correo, telefono, tipoActual);
+                try {
+                    proxy.inscribirParticipante(nombre, correo, telefono, tipoActual);
+                } catch (DatoInvalidoException m) {
+                    System.out.println("[PROXY] El participante no puede ser nulo");
+                }
 
                 // Limpieza de campos para el siguiente ingreso
                 txtNombreParticipante.setText("");
