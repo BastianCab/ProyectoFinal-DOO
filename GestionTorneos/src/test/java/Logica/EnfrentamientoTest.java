@@ -25,18 +25,6 @@ public class EnfrentamientoTest {
     }
 
     @Test
-    @DisplayName("Test competidores nulos")
-    void testEnfrentamientoCompetidoresNulos() throws DatoInvalidoException {
-        Participante p = new Participante(TipoParticipante.PERSONA, "Pepe0");
-
-        assertThrows(DatoInvalidoException.class, () ->
-                new Enfrentamiento(null, p));
-
-        assertThrows(DatoInvalidoException.class, () ->
-                new Enfrentamiento(p, null));
-    }
-
-    @Test
     @DisplayName("Test toString con resultados distintos")
     void testToStringResultados() throws DatoInvalidoException {
         Enfrentamiento enfrentamiento = new Enfrentamiento(p1, p2);

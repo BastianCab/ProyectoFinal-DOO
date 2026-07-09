@@ -86,8 +86,12 @@ public class Torneo {
      * lo guarda en su memoria interna y lo devuelve a la interfaz.
      * @return La lista definitiva de enfrentamientos generados.
      */
-    public List<Enfrentamiento> calcularEnfrentamientosTorneo() throws DatoInvalidoException {
-        this.enfrentamientos = this.estrategia.calcularEnfrentamientos(this.competidores);
+    public List<Enfrentamiento> calcularEnfrentamientosTorneo() {
+        try {
+            this.enfrentamientos = this.estrategia.calcularEnfrentamientos(this.competidores);
+        } catch (DatoInvalidoException e) {
+            System.out.println("Hubo un error al calcular los enfrentamientos");
+        }
         return this.enfrentamientos;
     }
 

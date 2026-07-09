@@ -15,7 +15,7 @@ public class CalcularLiga implements CalcularJuego{
     }
 
     @Override
-    public List<Enfrentamiento> calcularEnfrentamientos(List<Participante> competidores) throws DatoInvalidoException {
+    public List<Enfrentamiento> calcularEnfrentamientos(List<Participante> competidores) {
         List<Enfrentamiento> partidos = new ArrayList<>();
 
         Collections.shuffle(competidores);

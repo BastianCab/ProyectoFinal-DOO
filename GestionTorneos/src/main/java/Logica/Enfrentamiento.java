@@ -18,13 +18,7 @@ public class Enfrentamiento {
      * @param Competidor1 el primer participante
      * @param Competidor2 el segundo participante
      */
-    public Enfrentamiento(Participante Competidor1, Participante Competidor2) throws DatoInvalidoException {
-        if (Competidor1 == null) {
-            throw new DatoInvalidoException("El competidor 1 no puede ser nulo");
-        }
-        if (Competidor2 == null) {
-            throw new DatoInvalidoException("El competidor 2 no puede ser nulo");
-        }
+    public Enfrentamiento(Participante Competidor1, Participante Competidor2) {
         this.fechaHora = null;
         this.Competidor1 = Competidor1;
         this.Competidor2 = Competidor2;
