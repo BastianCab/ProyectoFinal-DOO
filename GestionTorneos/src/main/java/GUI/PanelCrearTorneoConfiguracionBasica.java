@@ -1,5 +1,6 @@
 package GUI;
 
+import Logica.DatoInvalidoException;
 import Logica.TipoTorneoEnum;
 import Logica.TipoParticipante;
 import javax.swing.*;
@@ -163,7 +164,12 @@ public class PanelCrearTorneoConfiguracionBasica extends JPanel {
                 return;
             }
 
-            proxy.crearTorneo(organizador, torneo, disciplina, tipoParticipante, formato);
+            try {
+                proxy.crearTorneo(organizador, torneo, disciplina, tipoParticipante, formato);
+            } catch (DatoInvalidoException l) {
+                System.out.println("El proxy no se creó correctamente");
+            }
+
             panelMaster.irAPaso2(tipoParticipante);
         }
     }
