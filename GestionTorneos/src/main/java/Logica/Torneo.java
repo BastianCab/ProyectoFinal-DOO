@@ -14,7 +14,7 @@ public class Torneo {
     private String disciplina;
     private TipoParticipante tipoParticipante;
     private TipoTorneoEnum tipoTorneo;
-    private CalcularJuegoPlaceholder estrategia;
+    private CalcularJuego estrategia;
     private List<Enfrentamiento> enfrentamientos;
     private List<Participante> competidores;
     private List<ObservadorTorneo> observadores = new ArrayList<>();
@@ -23,7 +23,7 @@ public class Torneo {
      * Crea un torneo, inicializa cada característica del torneo,
      * pero se deben definir luego por un organizador
      */
-    public Torneo(String nombreOrganizador, String nombre, String disciplina, TipoParticipante tipoParticipante, TipoTorneoEnum tipoTorneo, CalcularJuegoPlaceholder estrategia) {
+    public Torneo(String nombreOrganizador, String nombre, String disciplina, TipoParticipante tipoParticipante, TipoTorneoEnum tipoTorneo, CalcularJuego estrategia) {
         this.nombreOrganizador = nombreOrganizador;
         this.nombre = nombre;
         this.disciplina = disciplina;

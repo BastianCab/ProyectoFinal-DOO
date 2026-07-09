@@ -1,5 +1,9 @@
 package Logica;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class CalcularSimple implements CalcularJuego{
     int[][] partido = new int[100][20];
     int participante1;
@@ -10,7 +14,7 @@ public class CalcularSimple implements CalcularJuego{
 
     private boolean end = false;
 
-    CalcularSimple(int jugadores) {
+    public CalcularSimple(int jugadores) {
         for (int i=0;i<jugadores;i++){ //placeholder
             partido[i][0] = i+1;
         }
@@ -53,6 +57,29 @@ public class CalcularSimple implements CalcularJuego{
                 participante2 = partido[partidoAct * 2 + 1][rondaAct];
             }
         }
+    }
+
+    @Override
+    public List<Enfrentamiento> calcularEnfrentamientos(List<Participante> competidores) {
+        List<Enfrentamiento> partidos = new ArrayList<>();
+        Collections.shuffle(competidores);
+
+        // 1. CREAMOS LA PRIMERA RONDA (Partidos reales)
+        for (int i = 0; i < competidores.size(); i += 2) {
+            Participante p1 = competidores.get(i);
+            Participante p2 = (i + 1 < competidores.size()) ? competidores.get(i + 1) : new Participante(null, "Por definir", null, null);
+            partidos.add(new Enfrentamiento(p1, p2));
+        }
+
+        int partidosFaltantes = (competidores.size() / 2) - 1;
+        for (int i = 0; i < partidosFaltantes; i++) {
+            Participante fantasma1 = new Participante(null, "Por definir", "-", "-");
+            Participante fantasma2 = new Participante(null, "Por definir", "-", "-");
+
+            partidos.add(new Enfrentamiento(fantasma1, fantasma2));
+        }
+
+        return partidos;
     }
 
     @Override

@@ -44,16 +44,16 @@ public class Proxy {
             return;
         }
 
-        CalcularJuegoPlaceholder estrategia = null;
+        CalcularJuego estrategia = null;
         switch (tipoTorneo) {
             case LIGA_SIMPLE:
-                estrategia = new CalcularLigaPlaceholder();
+                estrategia = new CalcularLiga(torneo.getCantidadCompetidores());
                 break;
             case ELIMINACION_DIRECTA:
-                estrategia = new CalcularSimplePlaceholder();
+                estrategia = new CalcularSimple(torneo.getCantidadCompetidores());
                 break;
             case ELIMINACION_DOBLE:
-                estrategia = new CalcularDoblesPlaceholder();
+                estrategia = new CalcularDobles(torneo.getCantidadCompetidores());
                 break;
         }
 

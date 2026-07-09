@@ -1,5 +1,9 @@
 package Logica;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class CalcularDobles implements CalcularJuego {
     int[][] partido = new int[100][20];
     int[][] partidoPerdedores = new int[100][20];
@@ -16,7 +20,7 @@ public class CalcularDobles implements CalcularJuego {
     private int partidoAct = 0;
     private int rondaAct;
 
-    CalcularDobles(int jugadores) {
+    public CalcularDobles(int jugadores) {
         for (int i=0;i<jugadores;i++){ //placeholder
             partido[i][0] = i+1;
         }
@@ -111,6 +115,26 @@ public class CalcularDobles implements CalcularJuego {
                 participante2 = partidoPerdedores[partidoAct * 2 + 1][rondaAct];
             }
         }
+    }
+    @Override
+    public List<Enfrentamiento> calcularEnfrentamientos(List<Participante> competidores) {
+        List<Enfrentamiento> partidos = new ArrayList<>();
+        Collections.shuffle(competidores);
+
+        for (int i = 0; i < competidores.size(); i += 2) {
+            Participante p1 = competidores.get(i);
+            Participante p2 = (i + 1 < competidores.size()) ? competidores.get(i + 1) : new Participante(null, "Por definir", "-", "-");
+            partidos.add(new Enfrentamiento(p1, p2));
+        }
+
+        int partidosRondaPerdedores = competidores.size() - 1;
+
+        for (int i = 0; i < partidosRondaPerdedores; i++) {
+            Participante tbd = new Participante(null, "Por definir", "-", "-");
+            partidos.add(new Enfrentamiento(tbd, tbd));
+        }
+
+        return partidos;
     }
 
     @Override

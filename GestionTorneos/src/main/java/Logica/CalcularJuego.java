@@ -1,6 +1,7 @@
 package Logica;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface CalcularJuego {
     ArrayList<String> EnfrentamientosPH = new ArrayList<>();
@@ -27,6 +28,7 @@ public interface CalcularJuego {
     public default int getCompetidores() {
         return 666;
     }
+
     public int getTipo();
 
     public default void guardarEnfrentamientoPH(int a, int b, int c,String d,int f){
@@ -42,6 +44,6 @@ public interface CalcularJuego {
         return EnfrentamientosPH;
     }
 
-
+    public List<Enfrentamiento> calcularEnfrentamientos(List<Participante> cometidores);
 
 }
