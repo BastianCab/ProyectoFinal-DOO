@@ -17,7 +17,7 @@ public class TorneoTest {
     void setup() throws DatoInvalidoException {
         this.participante = TipoParticipante.PERSONA;
         this.tipoTorneo = TipoTorneoEnum.ELIMINACION_DIRECTA;
-        this.juego = new CalcularSimple(2);
+        this.juego = new CalcularSimple();
         this.participantes = new ArrayList();
         for (int i = 0; i < 2; i++) {
             participantes.add(new Participante(participante, "a" + i));
