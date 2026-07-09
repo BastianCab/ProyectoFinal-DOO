@@ -5,7 +5,7 @@
 * **Número de Grupo:** 1
 * **Integrantes:** 
     * Laura Malina Mardones Cuevas
-    * [Nombre]
+    * Bastián Gonzalo Cabezas Oliva
     * [Nombre]
 
 ---

@@ -10,8 +10,8 @@ public class EnfrentamientoTest {
     Enfrentamiento enfrentamiento;
     @BeforeEach
     void setup() throws DatoInvalidoException {
-        this.p1 = new Participante(TipoParticipante.PERSONA, "Pepe1");
-        this.p2 = new Participante(TipoParticipante.PERSONA, "Pepe2");
+        this.p1 = new Participante(TipoParticipante.PERSONA, "Pepe1", "correo1", "1234");
+        this.p2 = new Participante(TipoParticipante.PERSONA, "Pepe2", "correo2", "5678");
         this.enfrentamiento = new Enfrentamiento(p1, p2);
     }
 
