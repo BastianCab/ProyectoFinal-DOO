@@ -15,19 +15,24 @@ public class PanelPrincipal extends JPanel {
      * Inicializa el panel principal, pinta el fondo y agrega el título y los botones
      */
     public PanelPrincipal(Proxy proxy,JPanel contenedor, CardLayout cardLayout) {
-        this.setLayout(null);
+        this.setLayout(new GridBagLayout());
         this.setBackground(Color.WHITE);
 
         this.proxy = proxy;
         this.botones = new BotonesPanelPrincipal(proxy, contenedor, cardLayout);
 
+        JPanel panelMenu = new JPanel();
+        panelMenu.setLayout(null);
+        panelMenu.setPreferredSize(new Dimension(550, 480));
+        panelMenu.setBackground(Color.WHITE);
+
         JLabel Titulo = new JLabel("Gestor de Torneos");
         Titulo.setFont(new Font("Arial", Font.BOLD, 40));
+        Titulo.setBounds(120, 0, 400, 200);
+        botones.setBounds(150,175,300,260);
 
-        Titulo.setBounds(421, 86, 400, 200);
-        botones.setBounds(450,300,300,260);
-
-        this.add(Titulo);
-        this.add(botones);
+        panelMenu.add(Titulo);
+        panelMenu.add(botones);
+        this.add(panelMenu);
     }
 }
