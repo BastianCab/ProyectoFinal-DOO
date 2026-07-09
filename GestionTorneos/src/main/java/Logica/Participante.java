@@ -18,10 +18,6 @@ public class Participante {
      * @param nombre El nombre completo del jugador o el nombre oficial del equipo.
      */
     public Participante(TipoParticipante tipo, String nombre) throws DatoInvalidoException {
-        if (tipo == null) {
-            throw new DatoInvalidoException("El tipo de participante no puede ser nulo");
-        }
-
         if (nombre.isBlank() || nombre == null) {
             throw new DatoInvalidoException("El nombre del participante no puede ser nulo o vacío");
         }

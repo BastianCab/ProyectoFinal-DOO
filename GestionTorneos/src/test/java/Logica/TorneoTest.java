@@ -102,7 +102,7 @@ public class TorneoTest {
 
     @Test
     @DisplayName("Test calcular enfrentamientos torneo")
-    void testCalcularEnfrentamientosTorneo() {
+    void testCalcularEnfrentamientosTorneo() throws DatoInvalidoException {
         this.enfrentamientos = torneo.calcularEnfrentamientosTorneo();
         assertEquals(enfrentamientos, torneo.getEnfrentamientos());
     }

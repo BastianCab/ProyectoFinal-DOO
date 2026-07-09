@@ -129,7 +129,7 @@ public class Proxy {
      * secuencialmente a los partidos que ya se encuentran guardados en la memoria del torneo.
      * @param fechasElegidas Lista de fechas elegidas por el organizador.
      */
-    public void guardarFechasEnfrentamientos(List<LocalDateTime> fechasElegidas) {
+    public void guardarFechasEnfrentamientos(List<LocalDateTime> fechasElegidas) throws DatoInvalidoException {
 
         // Rescatamos los partidos que ya fueron calculados por el Strategy
         List<Enfrentamiento> partidos = this.torneo.getEnfrentamientos();

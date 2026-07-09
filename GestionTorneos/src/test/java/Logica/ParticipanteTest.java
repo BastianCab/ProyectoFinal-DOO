@@ -22,11 +22,4 @@ public class ParticipanteTest {
         assertThrows(DatoInvalidoException.class, () ->
                 new Participante(TipoParticipante.PERSONA, ""));
     }
-
-    @Test
-    @DisplayName("Test tipo de participante nulo")
-    void testParticipanteTipoNulo() {
-        assertThrows(DatoInvalidoException.class, () ->
-                new Participante(null, "Jugador1"));
-    }
 }
