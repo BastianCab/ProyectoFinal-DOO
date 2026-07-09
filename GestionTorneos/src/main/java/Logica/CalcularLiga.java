@@ -29,6 +29,11 @@ public class CalcularLiga implements CalcularJuego{
     }
 
     @Override
+    public int[] getParticipantes() {
+        return new int[0];
+    }
+
+    @Override
     public int getCompetidores() {
         return 666;
     }

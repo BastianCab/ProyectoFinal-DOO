@@ -13,6 +13,7 @@ public class CalcularSimple implements CalcularJuego{
     private int rondaAct;
 
     private boolean end = false;
+    private boolean start = true;
 
     public CalcularSimple() {
     }
@@ -63,44 +64,25 @@ public class CalcularSimple implements CalcularJuego{
             }
         }
     }
- /*
+
     @Override
     public List<Enfrentamiento> calcularEnfrentamientos(List<Participante> competidores) {
         List<Enfrentamiento> partidos = new ArrayList<>();
         Collections.shuffle(competidores);
 
-        // 1. CREAMOS LA PRIMERA RONDA (Partidos reales)
-        for (int i = 0; i < competidores.size(); i += 2) {
-            Participante p1 = competidores.get(i);
-            Participante p2 = (i + 1 < competidores.size()) ? competidores.get(i + 1) : new Participante(null, "Por definir", null, null);
-            partidos.add(new Enfrentamiento(p1, p2));
-        }
-
-        int partidosFaltantes = (competidores.size() / 2) - 1;
-        for (int i = 0; i < partidosFaltantes; i++) {
-            Participante fantasma1 = competidores.get((EnfrentamientosInfo.get(i))[0]);
-            Participante fantasma2 = competidores.get((EnfrentamientosInfo.get(i))[1]);
-            Enfrentamiento A = new Enfrentamiento(fantasma1, fantasma2);
+        int c = 0;
+        for (int i = 0; i < EnfrentamientosInfo.size(); i++) {
+            Enfrentamiento A = new Enfrentamiento(competidores.get((EnfrentamientosInfo.get(i))[0]),competidores.get((EnfrentamientosInfo.get(i))[1]));
             A.setResultado(EnfrentamientosInfo.get(i)[2]);
             partidos.add(A);
+            c++;
         }
-
-        return partidos;
-
-    }
-    */
-    @Override
-    public List<Enfrentamiento> calcularEnfrentamientos(List<Participante> competidores) {
-        List<Enfrentamiento> partidos = new ArrayList<>();
-        Collections.shuffle(competidores);
-
-        // 1. CREAMOS LA PRIMERA RONDA (Partidos reales)
-        for (int i = 0; i < competidores.size(); i += 2) {
+        // Partidos si todavia no se inicia el calculo
+        for (int i = c; i < competidores.size(); i += 2) {
             Participante p1 = competidores.get(i);
             Participante p2 = (i + 1 < competidores.size()) ? competidores.get(i + 1) : new Participante(null, "Por definir", null, null);
             partidos.add(new Enfrentamiento(p1, p2));
         }
-
         int partidosFaltantes = (competidores.size() / 2) - 1;
         for (int i = 0; i < partidosFaltantes; i++) {
             Participante fantasma1 = new Participante(null, "Por definir", "-", "-");
@@ -109,6 +91,12 @@ public class CalcularSimple implements CalcularJuego{
             partidos.add(new Enfrentamiento(fantasma1, fantasma2));
         }
         return partidos;
+
+    }
+
+    @Override
+    public int[] getParticipantes() {
+        return new int[]{participante1,participante2};
     }
 
     @Override

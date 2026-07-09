@@ -141,6 +141,10 @@ public class CalcularDobles implements CalcularJuego {
 
         return partidos;
     }
+    @Override
+    public int[] getParticipantes() {
+        return new int[]{participante1,participante2};
+    }
 
     @Override
     public int getTipo() {

@@ -37,10 +37,7 @@ public class Ventana extends JFrame {
         JPanel panelCrear = new PanelCrearTorneoMaster(proxyGlobal, panelContenedor, cardLayout);
 
         // 3. Módulo de Registro de Resultados (En construcción)
-        JPanel panelModificar = new JPanel();
-        panelModificar.setBackground(Color.LIGHT_GRAY);
-        panelModificar.setLayout(new GridBagLayout());
-        panelModificar.add(new JLabel("PANTALLA: FORMULARIO PARA REGISTRAR RESULTADOS DE ENFRENTAMIENTOS"));
+        JPanel panelModificar = new PanelMod(proxyGlobal);
 
         // 4. Módulo de Visualización (En construcción)
         JPanel panelEspectar = new JPanel();

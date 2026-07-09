@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface CalcularJuego {
+
     public ArrayList<int[]> EnfrentamientosInfo = new ArrayList<int[]>();
 
     public void empezar(int i);
@@ -27,21 +28,23 @@ public interface CalcularJuego {
         partidoC[66][ronda]=66;
     }
 
-    public default int getCompetidores() {
-        return 666;
-    }
-
-    public int getTipo();
-
     public default void guardarEnfrentamientoInfo(int a, int b, int c){
         int[] Info = {a,b,c};
         EnfrentamientosInfo.add(Info);
     }
 
+    public List<Enfrentamiento> calcularEnfrentamientos(List<Participante> cometidores);
+
     public default ArrayList<int[]> getEnfrentamientoInfo(){
         return EnfrentamientosInfo;
     }
 
-    public List<Enfrentamiento> calcularEnfrentamientos(List<Participante> cometidores);
+    public int[] getParticipantes();
+
+    public default int getCompetidores() {
+        return 666;
+    }
+
+    public int getTipo();
 
 }

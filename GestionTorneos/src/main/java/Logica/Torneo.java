@@ -124,4 +124,11 @@ public class Torneo {
     public List<Enfrentamiento> getEnfrentamientos() {
         return enfrentamientos;
     }
+    /**
+     * Getter de la estrategia.
+     * @return el codigo cuál calcula el curso del torneo;
+     */
+    public CalcularJuego getEstrategia(){
+        return estrategia;
+    }
 }

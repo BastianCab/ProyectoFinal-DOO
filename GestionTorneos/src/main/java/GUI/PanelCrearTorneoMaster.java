@@ -89,6 +89,8 @@ public class PanelCrearTorneoMaster extends JPanel {
         List<Enfrentamiento> partidosGenerados = proxy.generarEnfrentamientos();
         panelCrearTorneoFechas.cargarEnfrentamientos(partidosGenerados);
         layoutFormulario.show(this, "PASO_3");
+        proxy.getTorneo().getEstrategia().empezar(proxy.getTorneo().getCantidadCompetidores());
+        proxy.getTorneo().getEstrategia().siguiente();
     }
 
     /**
