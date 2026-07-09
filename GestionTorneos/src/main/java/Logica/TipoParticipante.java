@@ -11,10 +11,15 @@ public enum TipoParticipante {
     /**
      * Representa a un competidor individual (jugador único).
      */
-    PERSONA,
+    PERSONA("Persona"),
 
     /**
      * Representa a un conjunto de jugadores compitiendo como una sola entidad.
      */
-    EQUIPO
+    EQUIPO("Equipo");
+
+    private final String tipoParticipante;
+    TipoParticipante(String tipoParticipante){
+        this.tipoParticipante = tipoParticipante;
+    }
 }
