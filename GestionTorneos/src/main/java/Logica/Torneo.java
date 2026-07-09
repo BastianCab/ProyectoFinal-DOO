@@ -18,8 +18,6 @@ public class Torneo {
     private CalcularJuego estrategia;
     private List<Enfrentamiento> enfrentamientos;
     private List<Participante> competidores;
-    private List<ObservadorTorneo> observadores = new ArrayList<>();
-
     /**
      * Constructor principal que inicializa el estado base del torneo.
      * Recibe la configuración estructural y la herramienta lógica (Strategy)
