@@ -52,18 +52,19 @@ public class Proxy {
             throw new DatoInvalidoException("[PROXY] La disciplina no puede estar vacía.");
         }
 
+
         // --- RESOLUCIÓN DEL PATRÓN STRATEGY ---
         // Traduce el Enum visual en una clase lógica real capaz de calcular los enfrentamientos
         CalcularJuego estrategia = null;
         switch (tipoTorneo) {
             case LIGA_SIMPLE:
-                estrategia = new CalcularLiga(torneo.getCantidadCompetidores());
+                estrategia = new CalcularLiga();
                 break;
             case ELIMINACION_DIRECTA:
-                estrategia = new CalcularSimple(torneo.getCantidadCompetidores());
+                estrategia = new CalcularSimple();
                 break;
             case ELIMINACION_DOBLE:
-                estrategia = new CalcularDobles(torneo.getCantidadCompetidores());
+                estrategia = new CalcularDobles();
                 break;
             default:
                 throw new DatoInvalidoException("[PROXY] El tipo de torneo no puede estar vacío o ser nulo.");
@@ -72,6 +73,8 @@ public class Proxy {
         // --- INSTANCIACIÓN FINAL ---
         this.torneo = new Torneo(nombreOrganizador, nombre, disciplina, tipoParticipante,
             tipoTorneo, estrategia);
+
+
 
         // Visualización temporal para la consola
         System.out.println("[PROXY LOG] ¡Torneo instanciado con éxito en la memoria!");

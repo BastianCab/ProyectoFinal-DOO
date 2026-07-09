@@ -139,9 +139,10 @@ public class Torneo {
         return tipoTorneo;
     }
 
+
     /**
-     * Getter de la lista oficial de competidores.
-     * @return La lista que contiene a todos los participantes inscritos.
+     * Getter de la lista de competidores
+     * @return la lista que contiene a los competidores del torneo
      */
     public List<Participante> getCompetidores() {
         return competidores;
