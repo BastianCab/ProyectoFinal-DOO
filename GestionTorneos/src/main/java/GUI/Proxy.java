@@ -89,19 +89,22 @@ public class Proxy {
      * Recibe los datos de contacto desde la interfaz de inscripciones (Paso 2),
      * válida que no existan campos vacíos, crea la entidad Participante y
      * la agrega a la lista oficial del torneo activo.
-     * @param nombre Nombre del jugador o del equipo.
-     * @param tipoParticipante Modalidad correspondiente al torneo actual.
+     * @param nombre nombre del jugador o del equipo.
+     * @param correo el correo de contacto del jugador
+     * @param telefono el telefono de contacto del jugador
+     * @param tipoParticipante tipoParticipante Modalidad correspondiente al torneo actual.
+     * @throws DatoInvalidoException
      */
-    public void inscribirParticipante(String nombre, TipoParticipante tipoParticipante) throws DatoInvalidoException{
+    public void inscribirParticipante(String nombre, String correo, String telefono, TipoParticipante tipoParticipante) throws DatoInvalidoException{
 
         // --- BARRERAS DE SEGURIDAD ---
         if (nombre == null || nombre.trim().isEmpty()) {
-            System.out.println("[ERROR PROXY] El nombre no puede estar vacío.");
+            System.out.println("[PROXY] El nombre no puede estar vacío.");
             return;
         }
 
         // --- INSTANCIACIÓN E INSCRIPCIÓN ---
-        this.participante = new Participante(tipoParticipante, nombre);
+        this.participante = new Participante(tipoParticipante, nombre, correo, telefono);
         this.torneo.inscribirParticipante(participante);
 
         // Visualización temporal para la consola

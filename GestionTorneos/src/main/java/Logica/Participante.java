@@ -8,6 +8,8 @@ package Logica;
 public class Participante {
     TipoParticipante tipo;
     String nombre;
+    String correo;
+    String telefono;
 
     /**
      * Constructor principal de la clase Participante.
@@ -17,12 +19,39 @@ public class Participante {
      * @param tipo   La modalidad del participante obtenida del enumerador (Ej. PERSONA o EQUIPO).
      * @param nombre El nombre completo del jugador o el nombre oficial del equipo.
      */
-    public Participante(TipoParticipante tipo, String nombre) throws DatoInvalidoException {
+    public Participante(TipoParticipante tipo, String nombre, String correo, String telefono) throws DatoInvalidoException {
         if (nombre.isBlank() || nombre == null) {
             throw new DatoInvalidoException("El nombre del participante no puede ser nulo o vacío");
         }
+
+        if (correo.isBlank() || correo == null) {
+            throw new DatoInvalidoException("El correo no puede estar vacío o nulo");
+        }
+
+        if (telefono.isBlank() || telefono == null) {
+            throw new DatoInvalidoException("El telefono no puede estar vacío o nulo");
+        }
+
         this.tipo = tipo;
         this.nombre = nombre;
+        this.telefono = telefono;
+        this.correo = correo;
+    }
+
+    /**
+     * Getter del correo del participante
+     * @return El correo de contacto del participante
+     */
+    public String getCorreo() {
+        return correo;
+    }
+
+    /**
+     * Getter del número telefónico del participante
+      * @return el número telefónico del participante
+     */
+    public String getTelefono() {
+        return telefono;
     }
 
     /**
