@@ -1,10 +1,9 @@
 package Logica;
 
 public class CalcularSimple implements CalcularJuego{
-    private int[][] partido = new int[30][30];
-
-    private int participante1;
-    private int participante2;
+    int[][] partido = new int[100][20];
+    int participante1;
+    int participante2;
 
     private int partidoAct = 0;
     private int rondaAct;
@@ -25,6 +24,9 @@ public class CalcularSimple implements CalcularJuego{
         } else {
             throw new ErroresCalculo("Valor de ganador no valido [entre 1 y 0]");
         }
+        if(participante1!=0 && participante2!=0) {
+            guardarEnfrentamientoPH(participante1, participante2, Resultado, "", rondaAct); //PH guardar info
+        }
         partidoAct++;
     }
 
@@ -35,7 +37,8 @@ public class CalcularSimple implements CalcularJuego{
         } else {
             if (partido[partidoAct * 2 + 1][rondaAct] == 0) {
                 if (partido[partidoAct * 2][rondaAct] != 0) {
-                    partido[partidoAct][rondaAct + 1] = partido[partidoAct * 2][rondaAct];
+                    reorganizar(partido,partido[partidoAct * 2][rondaAct],rondaAct+1);
+                    //partido[partidoAct][rondaAct + 1] = partido[partidoAct * 2][rondaAct];
                 }
                 partidoAct = 0;
                 participante1 = partido[partidoAct * 2][rondaAct + 1];
@@ -55,9 +58,5 @@ public class CalcularSimple implements CalcularJuego{
     @Override
     public int getTipo() {
         return 1;
-    }
-    @Override
-    public int getCompetidores() {
-        return 666;
     }
 }

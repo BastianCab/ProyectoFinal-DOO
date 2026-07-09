@@ -3,6 +3,8 @@ package Logica;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalcularDoblesTest {
@@ -13,6 +15,7 @@ class CalcularDoblesTest {
             bab.siguiente();
             bab.enfrentar(0);
         }
+        ArrayList<String> a = bab.getEnfrentamientosPH();
     }
 
 }

@@ -3,6 +3,8 @@ package Logica;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalcularSimpleTest {
@@ -13,7 +15,6 @@ class CalcularSimpleTest {
         bab.siguiente();
         bab.enfrentar(1);
     }
-
+        ArrayList<String> a = bab.getEnfrentamientosPH();
     }
-
 }
