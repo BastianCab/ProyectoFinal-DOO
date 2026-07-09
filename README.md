@@ -6,7 +6,7 @@
 * **Integrantes:** 
     * Laura Malina Mardones Cuevas
     * Bastián Gonzalo Cabezas Oliva
-    * [Nombre]
+    * Ricardo Ignacio Lagos Lizama
 
 ---
 ## 2. Enunciado

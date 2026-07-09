@@ -33,8 +33,6 @@ public interface CalcularJuego {
         EnfrentamientosInfo.add(Info);
     }
 
-    public List<Enfrentamiento> calcularEnfrentamientos(List<Participante> cometidores);
-
     public default ArrayList<int[]> getEnfrentamientoInfo(){
         return EnfrentamientosInfo;
     }
