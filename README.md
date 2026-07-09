@@ -21,7 +21,11 @@ El siguiente diagrama ilustra las funcionalidades del sistema y las interaccione
 ---
 
 ## 4. Capturas de Pantalla de la Interfaz
-*(Asistente de creación guiado mediante CardLayout).*
+![Menu](https://github.com/BastianCab/ProyectoFinal-DOO/blob/main/1.png)
+![Crear Torneo paso 1](https://github.com/BastianCab/ProyectoFinal-DOO/blob/main/2.png)
+![Crear Torneo paso 2](https://github.com/BastianCab/ProyectoFinal-DOO/blob/main/3.png)
+![Crear Torneo paso 3]()
+![Espectar Torneo]()
 --
 ## 6. Patrones de Diseño Implementados
 
