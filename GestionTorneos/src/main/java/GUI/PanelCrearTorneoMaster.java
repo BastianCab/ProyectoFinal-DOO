@@ -1,9 +1,11 @@
 package GUI;
 
+import Logica.Enfrentamiento;
 import Logica.TipoParticipante;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.List;
 
 /**
  * Panel contenedor de 3 pasos para la creación de un torneo.
@@ -13,20 +15,24 @@ public class PanelCrearTorneoMaster extends JPanel {
     private CardLayout layoutFormulario;
     private Proxy proxy;
 
-    private PanelCrearTorneoInscripcion panelCrearTorneoInscripcion;
+    private JPanel panelContenedor;
+    private CardLayout cardLayout;
 
-    public PanelCrearTorneoMaster(Proxy proxyGlobal) {
+    private PanelCrearTorneoInscripcion panelCrearTorneoInscripcion;
+    private PanelCrearTorneoFechas panelCrearTorneoFechas;
+
+    public PanelCrearTorneoMaster(Proxy proxyGlobal, JPanel panelContenedor, CardLayout cardLayout) {
         this.proxy = proxyGlobal;
+        this.panelContenedor = panelContenedor;
+        this.cardLayout = cardLayout;
 
 
         this.layoutFormulario = new CardLayout();
         this.setLayout(layoutFormulario);
 
         JPanel panelCrearTorneoConfiguracionBasica = new PanelCrearTorneoConfiguracionBasica(this, proxy);
-        this.panelCrearTorneoInscripcion = new PanelCrearTorneoInscripcion(this, proxy); // Temporal
-        JPanel panelCrearTorneoFechas = new JPanel(); // Temporal
-
-        panelCrearTorneoFechas.add(new JLabel("PASO 3: CALENDARIO DE ENFRENTAMIENTOS"));
+        this.panelCrearTorneoInscripcion = new PanelCrearTorneoInscripcion(this, proxy);
+        this.panelCrearTorneoFechas = new PanelCrearTorneoFechas(this, proxy);
 
 
         this.add(panelCrearTorneoConfiguracionBasica, "PASO_1");
@@ -60,6 +66,12 @@ public class PanelCrearTorneoMaster extends JPanel {
      * Avanza al calendario final.
      */
     public void irAPaso3() {
+        List<Enfrentamiento> partidosGenerados = proxy.generarEnfrentamientos();
+        panelCrearTorneoFechas.cargarEnfrentamientos(partidosGenerados);
         layoutFormulario.show(this, "PASO_3");
+    }
+
+    public void irApaso4(){
+        this.cardLayout.show(panelContenedor, "PANTALLA_MENU");
     }
 }

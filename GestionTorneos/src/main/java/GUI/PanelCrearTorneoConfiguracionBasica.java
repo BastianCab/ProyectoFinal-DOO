@@ -95,7 +95,6 @@ public class PanelCrearTorneoConfiguracionBasica extends JPanel {
         });
 
         JButton btnSiguiente = new JButton("Siguiente ->");
-        //btnSiguiente.setBounds(400, 150, 150, 40);
         btnSiguiente.setBounds(370, 390, 150, 40);
         panelFormulario.add(btnSiguiente);
 
@@ -125,7 +124,7 @@ public class PanelCrearTorneoConfiguracionBasica extends JPanel {
                 return;
             }
 
-            proxy.crearTorneo(organizador, torneo, disciplina, tipoParticipante, formato); //(organizador, torneo, disciplina, formato);
+            proxy.crearTorneo(organizador, torneo, disciplina, tipoParticipante, formato);
             panelMaster.irAPaso2(tipoParticipante);
         }
     }

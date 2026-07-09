@@ -2,6 +2,10 @@ package GUI;
 
 import Logica.*;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Implementación del patrón "Proxy", para conectar la GUI con la lógica del gestor
  */
@@ -90,6 +94,22 @@ public class Proxy {
         System.out.println("  -> Número de teléfono: " + this.participante.getNumeroTelefonico());
 
         this.participante = null;
+    }
+
+    public List<Enfrentamiento> generarEnfrentamientos() {
+        if (this.torneo == null) return new ArrayList<>();
+
+        return this.torneo.calcularEnfrentamientosTorneo();
+    }
+
+    public void guardarFechasEnfrentamientos(List<LocalDateTime> fechasElegidas) {
+        List<Enfrentamiento> partidos = this.torneo.getEnfrentamientos();
+
+        for (int i = 0; i < partidos.size(); i++) {
+            partidos.get(i).setFechaHora(fechasElegidas.get(i));
+        }
+
+        System.out.println("[PROXY LOG] Fechas (LocalDateTime) asignadas correctamente.");
     }
 
     /**

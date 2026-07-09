@@ -1,6 +1,8 @@
 package Logica;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Collections;
 
 public class CalcularLigaPlaceholder implements CalcularJuegoPlaceholder{
 
@@ -12,12 +14,19 @@ public class CalcularLigaPlaceholder implements CalcularJuegoPlaceholder{
     }
 
     @Override
-    public ArrayList<Enfrentamiento> calcularEnfrentamientos(ArrayList<Participante> competidores) {
-        return null;
+    public List<Enfrentamiento> calcularEnfrentamientos(List<Participante> competidores) {
+        List<Enfrentamiento> partidos = new ArrayList<>();
+
+        Collections.shuffle(competidores);
+
+        for (int i = 0; i < competidores.size(); i++) {
+            for (int j = i + 1; j < competidores.size(); j++) {
+                partidos.add(new Enfrentamiento(competidores.get(i), competidores.get(j)));
+            }
+        }
+        return partidos;
     }
 
     @Override
-    public int getTipo(){
-        return 3;
-    }
+    public int getTipo() {return 3;}
 }

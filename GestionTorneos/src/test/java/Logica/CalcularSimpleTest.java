@@ -9,12 +9,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CalcularSimpleTest {
     @Test
-    void intentarCalulo () throws ErroresCalculo {
-    CalcularSimple bab = new CalcularSimple(10);
-    for (int i=0; i<20;i++) {
-        bab.siguiente();
-        bab.enfrentar(1);
-    }
-        ArrayList<String> a = bab.getEnfrentamientosPH();
+    void jscnkjdnc() {
+        //CalcularSimple bab = new CalcularSimple(new Torneo("A", "a", "a", TipoParticipante.PERSONA, TipoTorneoEnum.LIGA_SIMPLE));
+        void intentarCalulo () throws ErroresCalculo {
+            CalcularSimple bab = new CalcularSimple(10);
+            for (int i = 0; i < 20; i++) {
+                bab.siguiente();
+                bab.enfrentar(1);
+            }
+            ArrayList<String> a = bab.getEnfrentamientosPH();
+        }
     }
 }

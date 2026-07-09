@@ -15,8 +15,8 @@ public class Torneo {
     private TipoParticipante tipoParticipante;
     private TipoTorneoEnum tipoTorneo;
     private CalcularJuegoPlaceholder estrategia;
-    private ArrayList<Enfrentamiento> enfrentamientos;
-    private ArrayList<Participante> competidores;
+    private List<Enfrentamiento> enfrentamientos;
+    private List<Participante> competidores;
     private List<ObservadorTorneo> observadores = new ArrayList<>();
 
     /**
@@ -63,7 +63,7 @@ public class Torneo {
         }
     }
 
-    public ArrayList<Enfrentamiento> calcularEnfrentamientosTorneo(){
+    public List<Enfrentamiento> calcularEnfrentamientosTorneo(){
         this.enfrentamientos = this.estrategia.calcularEnfrentamientos(this.competidores);
         return this.enfrentamientos;
     }
@@ -116,7 +116,7 @@ public class Torneo {
      * Getter de la lista de competidores
      * @return la lista que contiene a los competidores del torneo
      */
-    public ArrayList<Participante> getCompetidores() {
+    public List<Participante> getCompetidores() {
         return competidores;
     }
 
@@ -124,7 +124,7 @@ public class Torneo {
      * Getter de la lista de enfrentamientos del torneo
      * @return la lista que contiene a los enfrentamientos del torneo
      */
-    public ArrayList<Enfrentamiento> getEnfrentamientos() {
+    public List<Enfrentamiento> getEnfrentamientos() {
         return enfrentamientos;
     }
 
