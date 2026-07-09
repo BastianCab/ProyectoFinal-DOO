@@ -25,7 +25,7 @@ El siguiente diagrama ilustra las funcionalidades del sistema y las interaccione
 ![Crear Torneo paso 1](https://github.com/BastianCab/ProyectoFinal-DOO/blob/main/2.png)
 ![Crear Torneo paso 2](https://github.com/BastianCab/ProyectoFinal-DOO/blob/main/3.png)
 ![Crear Torneo paso 3]()
-![Espectar Torneo]()
+![Espectar Torneo](https://github.com/BastianCab/ProyectoFinal-DOO/blob/main/5.png)
 --
 ## 6. Patrones de Diseño Implementados
 
