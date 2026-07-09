@@ -29,13 +29,40 @@ public class Torneo {
      * @param tipoTorneo El formato de llaves o liga.
      * @param estrategia El algoritmo concreto (Strategy) inyectado para generar los cruces.
      */
-    public Torneo(String nombreOrganizador, String nombre, String disciplina, TipoParticipante tipoParticipante, TipoTorneoEnum tipoTorneo, CalcularJuego estrategia) {
+    public Torneo(String nombreOrganizador, String nombre, String disciplina,
+                  TipoParticipante tipoParticipante, TipoTorneoEnum tipoTorneo,
+                  CalcularJuego estrategia) throws DatoInvalidoException {
+        if (nombreOrganizador.isBlank() || nombreOrganizador == null) {
+            throw new DatoInvalidoException("El nombre del organizador no puede ser nulo o vacío");
+        }
+
+        if (nombre.isBlank() || nombre == null){
+            throw new DatoInvalidoException("El nombre del torneo no puede ser nulo o vacío");
+        }
+
+        if (disciplina == null || disciplina.isBlank()) {
+            throw new DatoInvalidoException("La disciplina del torneo no puede ser nula o vacía");
+        }
+
+        if (tipoParticipante == null) {
+            throw new DatoInvalidoException("El tipo de participante no puede ser nulo");
+        }
+
+        if (tipoTorneo == null) {
+            throw new DatoInvalidoException("El tipo de torneo no puede ser nulo");
+        }
+
+        if (estrategia == null) {
+            throw new DatoInvalidoException("La forma de calcular los juegos no puede ser nula");
+        }
+
         this.nombreOrganizador = nombreOrganizador;
         this.nombre = nombre;
         this.disciplina = disciplina;
         this.tipoParticipante = tipoParticipante;
         this.tipoTorneo = tipoTorneo;
         this.estrategia = estrategia;
+
         this.enfrentamientos = new ArrayList<>();
         this.competidores = new ArrayList<>();
     }
@@ -44,7 +71,11 @@ public class Torneo {
      * Añade un nuevo competidor a la lista oficial de inscritos del torneo.
      * * @param nuevoParticipante El objeto Participante con sus datos ya validados.
      */
-    public void inscribirParticipante(Participante nuevoParticipante) {
+    public void inscribirParticipante(Participante nuevoParticipante) throws DatoInvalidoException {
+        if (nuevoParticipante == null) {
+            throw new DatoInvalidoException("El nuevo participante no puede ser nulo");
+        }
+
         this.competidores.add(nuevoParticipante);
         System.out.println("Participante " + nuevoParticipante.getNombre() + " inscrito con éxito.");
     }
