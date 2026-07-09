@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84c50cba-9721-4702-a204-1353f6b09a0f" name="Changes" comment="Recibir pull">
+      <change afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/PanelEspectarTorneo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/PanelCrearTorneoFechas.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/PanelCrearTorneoFechas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/PanelPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/PanelPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/Ventana.java" beforeDir="false" afterPath="$PROJECT_DIR$/GestionTorneos/src/main/java/GUI/Ventana.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,23 +176,23 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/GestionTorneos/src/test/java/Logica/CalcularSimpleTest.java</url>
-          <line>13</line>
+          <line>14</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularSimple.java</url>
-          <line>40</line>
+          <line>45</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularDobles.java</url>
-          <line>102</line>
+          <line>106</line>
           <option name="timeStamp" value="58" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/GestionTorneos/src/main/java/Logica/CalcularSimple.java</url>
-          <line>36</line>
-          <properties class="Logica.CalcularSimple" method="siguiente">
+          <line>41</line>
+          <properties class="Logica.CalcularSimple">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>

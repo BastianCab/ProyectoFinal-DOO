@@ -73,6 +73,7 @@ public class PanelCrearTorneoFechas extends JPanel{
 
         btnFinalizar = new JButton("Crear Torneo");
         btnFinalizar.setBounds(390, 410, 140, 40);
+        btnFinalizar.setBackground(Color.LIGHT_GRAY);
         panelFormulario.add(btnFinalizar);
 
         ClickBotonesPanelCrearTorneoFechas controlador = new ClickBotonesPanelCrearTorneoFechas();
