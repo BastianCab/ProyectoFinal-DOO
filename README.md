@@ -16,8 +16,13 @@ Este sistema está diseñado para facilitar la organizacíon de torneos deportiv
 
 ## 3. Diagrama de Casos de Uso
 El siguiente diagrama ilustra las funcionalidades del sistema y las interacciones con sus dos actores principales: el **Organizador** (administrador del evento) y el **Usuario** (espectador o competidor).
-<img width="769" height="406" alt="gestionDeTorneos" src="https://github.com/user-attachments/assets/86f89171-cc36-4fed-9f48-9ad84fa50505" />
 
+<img width="769" height="406" alt="gestionDeTorneos" src="https://github.com/user-attachments/assets/86f89171-cc36-4fed-9f48-9ad84fa50505" />
+---
+
+## 4. Capturas de Pantalla de la Interfaz
+*(Asistente de creación guiado mediante CardLayout).*
+--
 ## 6. Patrones de Diseño Implementados
 
 ### A. Patrón Strategy (Comportamiento)
