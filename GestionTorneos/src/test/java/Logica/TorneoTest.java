@@ -20,7 +20,7 @@ public class TorneoTest {
         this.juego = new CalcularSimple();
         this.participantes = new ArrayList();
         for (int i = 0; i < 2; i++) {
-            participantes.add(new Participante(participante, "a" + i));
+            participantes.add(new Participante(participante, "a" + i, "c" + i, "1" + i));
         }
 
         this.torneo = new Torneo("org", "tor", "fut", participante,
