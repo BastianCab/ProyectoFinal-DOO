@@ -30,7 +30,10 @@ El siguiente diagrama ilustra las funcionalidades del sistema y las interaccione
 ![Espectar Torneo](https://github.com/BastianCab/ProyectoFinal-DOO/blob/main/TorneoEspectar.png)
 --
 ## 5. Diagrama UML
---
+En el diagrama a continuación se detallan todas las clases con sus métodos, atributos y las relaciones entre cada clase
+
+<img width="3207" height="2283" alt="DiagramaUML-ProyectoFinal-DOO" src="https://github.com/user-attachments/assets/56c18a01-69fd-4fdd-b28b-32e21a1e8fb1" />
+---
 ## 6. Patrones de Diseño Implementados
 
 ### A. Patrón Strategy (Comportamiento)
